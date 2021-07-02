@@ -4,7 +4,10 @@
   "description": "![Design preview for the Planets fact site coding challenge](./preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "npm run parcel && npm run sass",
+    "sass": "sass src/scss/main.scss:src/css/style.css",
+    "parcel": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
