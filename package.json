@@ -1,0 +1,16 @@
+{
+  "name": "planets-fact-site",
+  "version": "1.0.0",
+  "description": "![Design preview for the Planets fact site coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.35.1"
+  }
+}
