@@ -1,0 +1,8 @@
+@use '../base';
+.wrapper {
+    background-image: url("../../assets/background-stars.svg");
+    background-color: base.$dark-blue;
+    background-repeat: no-repeat;
+    color: base.$white;
+    font-family: base.$main-font;
+}

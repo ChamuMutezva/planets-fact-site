@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -68,45 +68,15 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-    scroll-behavior: auto;
+   scroll-behavior: auto;
   }
-
+  
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-h1, h2, h3, h4 {
-  font-family: "Antonio", sans-serif;
-}
-
-.wrapper {
-  background-image: url("/background-stars.40a81775.svg");
-  background-color: #070724;
-  background-repeat: no-repeat;
-  color: #ffffff;
-  font-family: "Spartan", sans-serif;
-}
-
-.main__title {
-  text-transform: uppercase;
-  font-size: 1.75rem;
-  line-height: 1;
-}
-
-.main__heading {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-}
-
-.toggle--btn {
-  background: transparent;
-  border: none;
-}
-
-/*# sourceMappingURL=/main.d9ee62f6.css.map */

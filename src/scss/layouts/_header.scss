@@ -1,0 +1,17 @@
+@use '../base';
+
+.main__title {
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.main__heading {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 1.5rem;
+}
+.toggle--btn {
+	background: transparent;
+	border: none;
+}
