@@ -1,24 +1,428 @@
-/* Error: Module loop: this module is already being loaded.
- *   ,--> src\scss\base\_index.scss
- * 1 | @forward './index';
- *   | ^^^^^^^^^^^^^^^^^^ new load
- *   '
- *   ,--> src\scss\layouts\_main.scss
- * 1 | @use '../base';
- *   | ============== original load
- *   '
- *   src\scss\base\_index.scss 1:1     @use
- *   src\scss\layouts\_main.scss 1:1   @forward
- *   src\scss\layouts\_index.scss 1:1  @use
- *   src\scss\main.scss 1:1            root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > src\\scss\\base\\_index.scss\a 1 \2502  @forward './index';\a   \2502  ^^^^^^^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > src\\scss\\layouts\\_main.scss\a 1 \2502  @use '../base';\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   src\\scss\\base\\_index.scss 1:1     @use\a   src\\scss\\layouts\\_main.scss 1:1   @forward\a   src\\scss\\layouts\\_index.scss 1:1  @use\a   src\\scss\\main.scss 1:1            root stylesheet";
+@charset "UTF-8";
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+h1, h2, h3, h4 {
+  font-family: "Antonio", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.wrapper {
+  background-image: url("../../assets/background-stars.svg");
+  background-color: #070724;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-family: "Spartan", sans-serif;
+}
+
+.main {
+  padding: 0.4rem 1.5rem;
+}
+
+.modal__scroll {
+  height: 100vh;
+  overflow-y: hidden;
+  /* Avoid width reflow */
+}
+
+.main__title {
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.main__heading {
+  padding: 1rem 1.5rem;
+}
+
+.main__nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main__nav__list {
+  position: absolute;
+  left: -1.5rem;
+  background-color: #070724;
+  width: 100vw;
+  top: 2.5rem;
+  z-index: 1;
+  padding-top: 2.5rem;
+  min-height: 100vh;
+}
+
+.modal__hide {
+  display: none;
+}
+
+.planet {
+  margin-bottom: 2.8rem;
+  position: relative;
+}
+.planet::after {
+  position: absolute;
+  content: "";
+  width: 88%;
+  height: 1px;
+  background-color: #ffffff;
+  bottom: -1.5rem;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.toggle--btn {
+  background: transparent;
+  border: none;
+}
+
+.planet--btn {
+  position: relative;
+  margin-left: 4rem;
+  display: flex;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  user-select: none;
+}
+.planet--btn::before {
+  position: absolute;
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #DEF4FC;
+  border-radius: 50%;
+  left: -2.5rem;
+}
+.planet--btn::after {
+  position: absolute;
+  content: url("../../assets/icon-chevron.svg");
+  right: 0;
+  padding-right: 2rem;
+}
+
+.venus--btn::before {
+  background-color: #F7CC7F;
+}
+
+.earth--btn::before {
+  background-color: #545BFE;
+}
+
+.mars--btn::before {
+  background-color: #FF6A45;
+}
+
+.jupiter--btn::before {
+  background-color: #ECAD7A;
+}
+
+.saturn--btn::before {
+  background-color: #FCCB6B;
+}
+
+.uranus--btn::before {
+  background-color: #65F0D5;
+}
+
+.neptune--btn::before {
+  background-color: #497EFA;
+}
+
+/*
+.btn-check {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    pointer-events: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-secondary {
+    border: .3rem solid transparent;
+
+    &:focus,
+    &:hover,
+    &:active {
+        color: #fff;
+        border-bottom: 3px solid red;
+        padding-bottom: .3rem;
+       // background-color: #a316fd;
+        cursor: pointer;
+    }
+}
+*/
+.tab__list {
+  position: relative;
+}
+.tab__list::before, .tab__list::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 3rem);
+  left: -1.5rem;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+.tab__list::before {
+  top: -1rem;
+}
+.tab__list::after {
+  bottom: -1rem;
+}
+
+.tab__item--btn {
+  font-size: 0.5625rem;
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+[role=tablist] [aria-selected]::after {
+  content: " ⬅";
+  content: "";
+  width: 100%;
+  height: 0.3rem;
+  background-color: turquoise;
+  position: absolute;
+  left: 0;
+  bottom: -1.2rem;
+  opacity: 1;
+}
+
+/*
+.tab__item--btn [aria-selected]::after,
+.tab__item--btn:focus::after {
+    content: "";
+    width: 100%;
+    height: .3rem;
+    background-color: turquoise;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}*/
+[role=tablist] {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+}
+
+/*
+[role="tablist"] li,
+[role="tablist"] a {
+    display: inline-block;
+    position: static;
+}
+
+
+[role="tablist"] a {
+    border: 2px solid #222 !important;
+}
+
+[role="tablist"] li+li a {
+    border-top: 0 !important;
+}
+
+[role="tablist"] [aria-selected] {
+    position: static;
+}
+*/
+[role=tabpanel] {
+  border-top: 0;
+}
+
+.planet__img__wrapper {
+  margin: 7rem auto 5.5rem;
+}
+
+.planet__img {
+  width: 34%;
+  margin: auto;
+}
+
+.sections {
+  text-align: center;
+}
+
+.planet__title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.planet__details {
+  font-size: 0.6875rem;
+  line-height: 2.1;
+  margin-top: 1rem;
+}
+
+.planet__more--btn {
+  color: white;
+}
+
+.source__img {
+  display: inline;
+}
+
+.planet__details__source {
+  margin-top: 2rem;
+}
+
+.info__List {
+  margin-top: 1.5rem;
+}
+
+.info__list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.info__list__data {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.info__list__description {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 550px) {
+  [role=tablist] a {
+    text-decoration: none;
+    padding: 0.5rem 1em;
+  }
+
+  /*
+      [role="tablist"] [aria-selected] {
+          border: 2px solid;
+          background: #fff;
+          border-bottom: 0;
+          position: relative;
+          top: 2px;
+      }
+       [role="tabpanel"] {
+          border: 2px solid;
+          padding: 1.5rem;
+      }
+  */
+  [role=tabpanel] * + * {
+    margin-top: 0.75rem;
+  }
+
+  /*
+      *:focus {
+          outline: none;
+          box-shadow: inset 0 0 0 4px lightBlue;
+      }
+  */
+}
+
+/*# sourceMappingURL=style.css.map */
