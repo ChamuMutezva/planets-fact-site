@@ -119,7 +119,51 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"main.js":[function(require,module,exports) {
 (function () {
-  // Get relevant elements and collections
+  // toggle menu modal open
+  var menuModal = document.querySelector(".toggle--btn");
+  var modal = document.querySelector(".main__nav__list"); //tab trapping elements 
+
+  var focusableElements = Array.from(document.querySelectorAll(".planet--btn"));
+  var firstFocusableElement = focusableElements[0]; //first focusable element
+
+  var lastFocusableElement = focusableElements[focusableElements.length - 1]; // last focused element
+
+  console.log(firstFocusableElement);
+  console.log(lastFocusableElement); //tab trapping method and call
+
+  document.addEventListener('keydown', function (e) {
+    var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) {
+      // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+
+        e.preventDefault();
+      }
+    } else {
+      // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) {
+        // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus(); // add focus for the first focusable element
+
+        e.preventDefault();
+      }
+    }
+  });
+  firstFocusableElement.focus(); //end of tab trapping
+
+  console.log(menuModal);
+  menuModal.addEventListener("click", function () {
+    console.log("button clicked");
+    modal.classList.toggle("modal__hide");
+    document.body.classList.toggle("modal__scroll");
+  }); // Get relevant elements and collections
+
   var tabbed = document.querySelector('.tabbed');
   var tablist = tabbed.querySelector('ul');
   var tabs = tablist.querySelectorAll('a');
@@ -215,7 +259,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54306" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60913" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

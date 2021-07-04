@@ -1,4 +1,5 @@
 @use '../base';
+
 .wrapper {
     background-image: url("../../assets/background-stars.svg");
     background-color: base.$dark-blue;
@@ -6,6 +7,14 @@
     color: base.$white;
     font-family: base.$main-font;
 }
-.main  {
+
+.main {
     padding: .4rem 1.5rem;
+}
+
+.modal__scroll {
+    height: 100vh;
+    overflow-y: hidden;
+   // padding-right: 15px;
+    /* Avoid width reflow */
 }

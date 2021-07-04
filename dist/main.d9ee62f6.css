@@ -110,6 +110,12 @@ h1, h2, h3, h4 {
   padding: 0.4rem 1.5rem;
 }
 
+.modal__scroll {
+  height: 100vh;
+  overflow-y: hidden;
+  /* Avoid width reflow */
+}
+
 .main__title {
   text-transform: uppercase;
   font-size: 1.75rem;
@@ -135,6 +141,11 @@ h1, h2, h3, h4 {
   top: 2.5rem;
   z-index: 1;
   padding-top: 2.5rem;
+  min-height: 100vh;
+}
+
+.modal__hide {
+  display: none;
 }
 
 .planet {
@@ -166,6 +177,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
+  user-select: none;
 }
 .planet--btn::before {
   position: absolute;

@@ -25,6 +25,11 @@
 	top: 2.5rem;
 	z-index: 1;
 	padding-top: 2.5rem;
+	min-height: 100vh;
+}
+
+.modal__hide {
+	display: none;
 }
 
 .planet {
@@ -57,6 +62,7 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 600;
+	user-select: none;
 
 	&::before {
 		position: absolute;
