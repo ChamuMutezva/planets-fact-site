@@ -1,17 +1,119 @@
 @use '../base';
 
 .main__title {
-    text-transform: uppercase;
-    font-size: 1.75rem;
-    line-height: 1;
+	text-transform: uppercase;
+	font-size: 1.75rem;
+	line-height: 1;
 }
 
 .main__heading {
-	display: flex;
-	justify-content: space-between;
 	padding: 1rem 1.5rem;
 }
+
+.main__nav {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.main__nav__list {
+	position: absolute;
+	left: -1.5rem;
+	background-color: base.$dark-blue;
+	width: 100vw;
+	top: 2.5rem;
+	z-index: 1;
+	padding-top: 2.5rem;
+}
+
+.planet {
+	margin-bottom: 2.8rem;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: "";
+		width: 88%;
+		height: 1px;
+		background-color: base.$white;
+		bottom: -1.5rem;
+		margin-left: 6%;
+		margin-right: 6%;
+	}
+}
+
 .toggle--btn {
 	background: transparent;
 	border: none;
+}
+
+.planet--btn {
+	position: relative;
+	margin-left: 4rem;
+	display: flex;
+	color: base.$white;
+	font-size: 0.9375rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 600;
+
+	&::before {
+		position: absolute;
+		content: "";
+		width: 1.25rem;
+		height: 1.25rem;
+		background-color: #DEF4FC;
+		border-radius: 50%;
+		left: -2.5rem;
+	}
+
+	&::after {
+		position: absolute;
+		content: url("../../assets/icon-chevron.svg");
+		right: 0;
+		padding-right: 2rem;
+	}
+}
+
+.venus--btn {
+	&::before {
+		background-color: #F7CC7F;
+	}
+}
+
+.earth--btn {
+	&::before {
+		background-color: #545BFE;
+	}
+}
+
+.mars--btn {
+	&::before {
+		background-color: #FF6A45;
+	}
+}
+
+.jupiter--btn {
+	&::before {
+		background-color: #ECAD7A;
+	}
+}
+
+.saturn--btn {
+	&::before {
+		background-color: #FCCB6B;
+	}
+}
+
+.uranus--btn {
+	&::before {
+		background-color: #65F0D5;
+	}
+}
+
+.neptune--btn {
+	&::before {
+		background-color: #497EFA;
+	}
 }
