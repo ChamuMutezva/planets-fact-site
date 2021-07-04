@@ -117,79 +117,77 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"main.js":[function(require,module,exports) {
+(function () {
+  // Get relevant elements and collections
+  var tabbed = document.querySelector('.tabbed');
+  var tablist = tabbed.querySelector('ul');
+  var tabs = tablist.querySelectorAll('a');
+  var panels = tabbed.querySelectorAll('[id^="section"]'); // The tab switching function
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+  var switchTab = function switchTab(oldTab, newTab) {
+    newTab.focus(); // Make the active tab focusable by the user (Tab key)
 
-  return bundleURL;
-}
+    newTab.removeAttribute('tabindex'); // Set the selected state
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    newTab.setAttribute('aria-selected', 'true');
+    oldTab.removeAttribute('aria-selected');
+    oldTab.setAttribute('tabindex', '-1'); // Get the indices of the new and old tabs to find the correct
+    // tab panels to show and hide
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
+    var index = Array.prototype.indexOf.call(tabs, newTab);
+    var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+    panels[oldIndex].hidden = true;
+    panels[index].hidden = false;
+  }; // Add the tablist role to the first <ul> in the .tabbed container
 
-  return '/';
-}
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
+  tablist.setAttribute('role', 'tablist'); // Add semantics are remove user focusability for each tab
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
+  Array.prototype.forEach.call(tabs, function (tab, i) {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('id', 'tab' + (i + 1));
+    tab.setAttribute('tabindex', '-1');
+    tab.parentNode.setAttribute('role', 'presentation'); // Handle clicking of tabs for mouse users
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
+    tab.addEventListener('click', function (e) {
+      e.preventDefault();
+      var currentTab = tablist.querySelector('[aria-selected]');
 
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+      if (e.currentTarget !== currentTab) {
+        switchTab(currentTab, e.currentTarget);
       }
-    }
+    }); // Handle keydown events for keyboard users
 
-    cssTimeout = null;
-  }, 50);
-}
+    tab.addEventListener('keydown', function (e) {
+      // Get the index of the current tab in the tabs node list
+      var index = Array.prototype.indexOf.call(tabs, e.currentTarget); // Work out which key the user is pressing and
+      // Calculate the new tab's index where appropriate
 
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/scss/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
+      var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
 
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\..\\assets\\background-stars.svg":[["background-stars.40a81775.svg","assets/background-stars.svg"],"assets/background-stars.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+      if (dir !== null) {
+        e.preventDefault(); // If the down key is pressed, move focus to the open panel,
+        // otherwise switch to the adjacent tab
+
+        dir === 'down' ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
+      }
+    });
+  }); // Add tab panel semantics and hide them all
+
+  Array.prototype.forEach.call(panels, function (panel, i) {
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('tabindex', '-1');
+    var id = panel.getAttribute('id');
+    panel.setAttribute('aria-labelledby', tabs[i].id);
+    panel.hidden = true;
+  }); // Initially activate the first tab and reveal the first tab panel
+
+  tabs[0].removeAttribute('tabindex');
+  tabs[0].setAttribute('aria-selected', 'true');
+  panels[0].hidden = false;
+})();
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +391,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/main.d9ee62f6.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
+//# sourceMappingURL=/main.1f19ae8e.js.map

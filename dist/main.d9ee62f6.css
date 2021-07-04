@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Box sizing rules */
 *,
 *::before,
@@ -84,12 +85,29 @@ h1, h2, h3, h4 {
   font-family: "Antonio", sans-serif;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
 .wrapper {
   background-image: url("/background-stars.40a81775.svg");
   background-color: #070724;
   background-repeat: no-repeat;
   color: #ffffff;
   font-family: "Spartan", sans-serif;
+}
+
+.main {
+  padding: 0.4rem 1.5rem;
 }
 
 .main__title {
@@ -107,6 +125,208 @@ h1, h2, h3, h4 {
 .toggle--btn {
   background: transparent;
   border: none;
+}
+
+/*
+.btn-check {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    pointer-events: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-secondary {
+    border: .3rem solid transparent;
+
+    &:focus,
+    &:hover,
+    &:active {
+        color: #fff;
+        border-bottom: 3px solid red;
+        padding-bottom: .3rem;
+       // background-color: #a316fd;
+        cursor: pointer;
+    }
+}
+*/
+.tab__list {
+  position: relative;
+}
+.tab__list::before, .tab__list::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 3rem);
+  left: -1.5rem;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+.tab__list::before {
+  top: -1rem;
+}
+.tab__list::after {
+  bottom: -1rem;
+}
+
+.tab__item--btn {
+  font-size: 0.5625rem;
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+[role=tablist] [aria-selected]::after {
+  content: " ⬅";
+  content: "";
+  width: 100%;
+  height: 0.3rem;
+  background-color: turquoise;
+  position: absolute;
+  left: 0;
+  bottom: -1.2rem;
+  opacity: 1;
+}
+
+/*
+.tab__item--btn [aria-selected]::after,
+.tab__item--btn:focus::after {
+    content: "";
+    width: 100%;
+    height: .3rem;
+    background-color: turquoise;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}*/
+[role=tablist] {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+}
+
+/*
+[role="tablist"] li,
+[role="tablist"] a {
+    display: inline-block;
+    position: static;
+}
+
+
+[role="tablist"] a {
+    border: 2px solid #222 !important;
+}
+
+[role="tablist"] li+li a {
+    border-top: 0 !important;
+}
+
+[role="tablist"] [aria-selected] {
+    position: static;
+}
+*/
+[role=tabpanel] {
+  border-top: 0;
+}
+
+.planet__img__wrapper {
+  margin: 7rem auto 5.5rem;
+}
+
+.planet__img {
+  width: 34%;
+  margin: auto;
+}
+
+.sections {
+  text-align: center;
+}
+
+.planet__title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.planet__details {
+  font-size: 0.6875rem;
+  line-height: 2.1;
+  margin-top: 1rem;
+}
+
+.planet__more--btn {
+  color: white;
+}
+
+.source__img {
+  display: inline;
+}
+
+.planet__details__source {
+  margin-top: 2rem;
+}
+
+.info__List {
+  margin-top: 1.5rem;
+}
+
+.info__list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.info__list__data {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.info__list__description {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 550px) {
+  [role=tablist] a {
+    text-decoration: none;
+    padding: 0.5rem 1em;
+  }
+
+  /*
+      [role="tablist"] [aria-selected] {
+          border: 2px solid;
+          background: #fff;
+          border-bottom: 0;
+          position: relative;
+          top: 2px;
+      }
+       [role="tabpanel"] {
+          border: 2px solid;
+          padding: 1.5rem;
+      }
+  */
+  [role=tabpanel] * + * {
+    margin-top: 0.75rem;
+  }
+
+  /*
+      *:focus {
+          outline: none;
+          box-shadow: inset 0 0 0 4px lightBlue;
+      }
+  */
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
