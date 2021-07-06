@@ -69,7 +69,7 @@
 		content: "";
 		width: 1.25rem;
 		height: 1.25rem;
-		background-color: #DEF4FC;
+		background-color: base.$mercury;
 		border-radius: 50%;
 		left: -2.5rem;
 	}
@@ -84,42 +84,96 @@
 
 .venus--btn {
 	&::before {
-		background-color: #F7CC7F;
+		background-color: base.$venus;
 	}
 }
 
 .earth--btn {
 	&::before {
-		background-color: #545BFE;
+		background-color: base.$earth;
 	}
 }
 
 .mars--btn {
 	&::before {
-		background-color: #FF6A45;
+		background-color: base.$mars;
 	}
 }
 
 .jupiter--btn {
 	&::before {
-		background-color: #ECAD7A;
+		background-color: base.$jupiter;
 	}
 }
 
 .saturn--btn {
 	&::before {
-		background-color: #FCCB6B;
+		background-color: base.$saturn;
 	}
 }
 
 .uranus--btn {
 	&::before {
-		background-color: #65F0D5;
+		background-color: base.$uranus;
 	}
 }
 
 .neptune--btn {
 	&::before {
-		background-color: #497EFA;
+		background-color: base.$neptune;
+	}
+}
+
+@media screen and (min-width: 680px) {
+	.main__heading {
+		padding: 2rem 3.2rem;
+	}
+
+	.modal__hide {
+		display: flex;
+	}
+
+	.main__nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.main__nav__list {
+		position: relative;
+		left: 0;
+		min-height: auto;
+		width: 100%;
+		justify-content: space-between;
+		margin-top: 0;
+		top: 0;
+	}	
+
+	.planet {
+		margin-bottom: 0;
+
+		&::after {
+			width: 0;
+			height: 0;
+		}
+
+	}
+
+	.toggle--btn {
+		display: none;
+	}
+
+	.planet--btn {
+		margin-left: auto;
+
+		&::before {
+			width: 0;
+			height: 0;
+		}
+
+		&::after {
+			content: "";
+			width: 0;
+			height: 0;
+		}
 	}
 }

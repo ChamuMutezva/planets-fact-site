@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.1e0171f0.png">
 
   <title>Frontend Mentor | Planets fact site</title>
+  <!-- <link rel="stylesheet" href="./src/css/style.css"> -->
   <link rel="stylesheet" href="/main.d9ee62f6.css">
 </head>
 
@@ -51,7 +52,9 @@
     <main class="main">
 
       <div class="tabbed">
-        <ul class="tab__list">
+
+        <!--tabs section-->
+        <ul class="tab__list earth__tab">
           <li class="tab__list__item">
             <a class="tab__item--btn" href="#section1">Overview</a>
           </li>
@@ -61,72 +64,83 @@
           <li class="tab__list__item">
             <a class="tab__item--btn" href="#section3">Surface Geology</a>
           </li>
-
         </ul>
+        <!--end of tab section-->
+
         <!-- Overview Content Start -->
         <section class="sections" id="section1">
-          <div class="planet__img__wrapper">
-            <img class="planet__img" src="/planet-earth.a4608742.svg" alt="">
-          </div>
-          <h2 class="planet__title">Earth</h2>
-          <p class="planet__details">
-            <!-- Overview Content Start -->
-            Third planet from the Sun and the only known planet to harbor life.
-            About 29.2% of Earth's surface is land with remaining 70.8% is
-            covered with water. Earth's distance from the Sun, physical properties
-            and geological history have allowed life to evolve and thrive.
-          </p>
-          <div class="planet__details__source">
-            <span>Source: </span>
-            <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth">Wikipedia
-            </a>
-            <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/planet-earth.a4608742.svg" alt="">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Earth</h2>
+              <p class="planet__details">
+                <!-- Overview Content Start -->
+                Third planet from the Sun and the only known planet to harbor life.
+                About 29.2% of Earth's surface is land with remaining 70.8% is
+                covered with water. Earth's distance from the Sun, physical properties
+                and geological history have allowed life to evolve and thrive.
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth">Wikipedia
+                </a>
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
           </div>
         </section>
         <!-- Overview Content End -->
 
         <!-- Internal Structure Content Start -->
         <section class="sections" id="section2">
-          <div class="planet__img__wrapper">
-            <img class="planet__img" src="/planet-earth-internal.6e3988c5.svg" alt="">
-          </div>
-
-          <h2 class="planet__title">Earth</h2>
-          <p class="planet__details">
-            Earth's interior, like that of the other terrestrial planets, is divided
-            into layers by their chemical or physical (rheological) properties. The
-            outer layer is a chemically distinct silicate solid crust, which is
-            underlain by a highly viscous solid mantle.
-          </p>
-          <div class="planet__details__source">
-            <span>Source: </span>
-            <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth#Internal_structure">Wikipedia
-              <!--https://en.wikipedia.org/wiki/Earth#Internal_structure-->
-            </a>
-            <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/planet-earth-internal.6e3988c5.svg" alt="">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Earth</h2>
+              <p class="planet__details">
+                Earth's interior, like that of the other terrestrial planets, is divided
+                into layers by their chemical or physical (rheological) properties. The
+                outer layer is a chemically distinct silicate solid crust, which is
+                underlain by a highly viscous solid mantle.
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth#Internal_structure">Wikipedia
+                  <!--https://en.wikipedia.org/wiki/Earth#Internal_structure-->
+                </a>
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
           </div>
         </section>
         <!-- Internal Structure Content End -->
 
         <!-- Surface Geology Content Start -->
         <section class="sections" id="section3">
-          <div class="planet__img__wrapper">
-            <img class="planet__img" src="/geology-earth.30e88db0.png" alt="">
-          </div>
-          <h2 class="planet__title">Earth</h2>
-          <p class="planet__details">
-            The total surface area of Earth is about 510 million km2. The continental
-            crust consists of lower density material such as the igneous rocks granite
-            and andesite. Less common is basalt, a denser volcanic rock that is the
-            primary constituent of the ocean floors.
-          </p>
-          <div class="planet__details__source">
-            <span>Source: </span>
-            <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth#Surface">
-              Wikipedia </a>
-              <!-- URL: https://en.wikipedia.org/wiki/Earth#Surface -->
-
-            <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/geology-earth.30e88db0.png" alt="">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Earth</h2>
+              <p class="planet__details">
+                The total surface area of Earth is about 510 million km2. The continental
+                crust consists of lower density material such as the igneous rocks granite
+                and andesite. Less common is basalt, a denser volcanic rock that is the
+                primary constituent of the ocean floors.
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Earth#Surface">
+                  Wikipedia </a>
+                <!-- URL: https://en.wikipedia.org/wiki/Earth#Surface -->
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
           </div>
         </section>
         <!-- Surface Geology Content End -->
@@ -156,7 +170,7 @@
 
   </div>
   <script src="/main.1f19ae8e.js"></script>
-  
+
 </body>
 
 </html>

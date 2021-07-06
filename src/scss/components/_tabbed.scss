@@ -1,0 +1,14 @@
+@use '../base';
+
+@media screen and (min-width: 680px) {
+    .tabbed {
+        position: relative;
+    }
+    .section__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .planet__img__wrapper {
+        grid-area: 1/1/4/3;
+    }
+}

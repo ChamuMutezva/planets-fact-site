@@ -59,11 +59,11 @@
 }
 
 [role="tablist"] [aria-selected]::after {
-    content: '\0020⬅';
+    /* content: '\0020⬅'; */
     content: "";
     width: 100%;
     height: .3rem;
-    background-color: turquoise;
+    background-color: base.$mercury;
     position: absolute;
     left: 0;
     bottom: -1.2rem;
@@ -157,7 +157,7 @@
 }
 
 .info__List {
-	margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .info__list__item {
@@ -181,36 +181,51 @@
     text-transform: uppercase;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 680px) {
+   
+    .tab__list {
+        flex-direction: column;
+        max-width: 281px;
+        gap: 1rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        &::before,
+        &::after {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .tab__list__item {
+        border: 1px solid white;
+    }
+
+    .tab__item--btn {
+        width: 100%;
+        display: inline-block;
+    }
 
     [role="tablist"] a {
         text-decoration: none;
         padding: 0.5rem 1em;
     }
 
-    /*
+    [role="tablist"] [aria-selected]::after {
+        opacity: 0;
+    }
+
     [role="tablist"] [aria-selected] {
-        border: 2px solid;
-        background: #fff;
-        border-bottom: 0;
-        position: relative;
-        top: 2px;
+        top: 0;
+        background-color: base.$earth;
+        opacity: 1;
     }
-     [role="tabpanel"] {
-        border: 2px solid;
-        padding: 1.5rem;
-    }
-*/
 
 
     [role="tabpanel"] *+* {
         margin-top: 0.75rem;
     }
 
-    /*
-    *:focus {
-        outline: none;
-        box-shadow: inset 0 0 0 4px lightBlue;
-    }
-*/
+
 }

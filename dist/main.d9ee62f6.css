@@ -223,6 +223,55 @@ h1, h2, h3, h4 {
   background-color: #497EFA;
 }
 
+@media screen and (min-width: 680px) {
+  .main__heading {
+    padding: 2rem 3.2rem;
+  }
+
+  .modal__hide {
+    display: flex;
+  }
+
+  .main__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main__nav__list {
+    position: relative;
+    left: 0;
+    min-height: auto;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0;
+    top: 0;
+  }
+
+  .planet {
+    margin-bottom: 0;
+  }
+  .planet::after {
+    width: 0;
+    height: 0;
+  }
+
+  .toggle--btn {
+    display: none;
+  }
+
+  .planet--btn {
+    margin-left: auto;
+  }
+  .planet--btn::before {
+    width: 0;
+    height: 0;
+  }
+  .planet--btn::after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+}
 /*
 .btn-check {
     clip: rect(0, 0, 0, 0);
@@ -277,11 +326,11 @@ h1, h2, h3, h4 {
 }
 
 [role=tablist] [aria-selected]::after {
-  content: " ⬅";
+  /* content: '\0020⬅'; */
   content: "";
   width: 100%;
   height: 0.3rem;
-  background-color: turquoise;
+  background-color: #DEF4FC;
   position: absolute;
   left: 0;
   bottom: -1.2rem;
@@ -394,35 +443,61 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 680px) {
+  .tab__list {
+    flex-direction: column;
+    max-width: 281px;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .tab__list::before, .tab__list::after {
+    width: 0;
+    height: 0;
+  }
+
+  .tab__list__item {
+    border: 1px solid white;
+  }
+
+  .tab__item--btn {
+    width: 100%;
+    display: inline-block;
+  }
+
   [role=tablist] a {
     text-decoration: none;
     padding: 0.5rem 1em;
   }
 
-  /*
-      [role="tablist"] [aria-selected] {
-          border: 2px solid;
-          background: #fff;
-          border-bottom: 0;
-          position: relative;
-          top: 2px;
-      }
-       [role="tabpanel"] {
-          border: 2px solid;
-          padding: 1.5rem;
-      }
-  */
+  [role=tablist] [aria-selected]::after {
+    opacity: 0;
+  }
+
+  [role=tablist] [aria-selected] {
+    top: 0;
+    background-color: #545BFE;
+    opacity: 1;
+  }
+
   [role=tabpanel] * + * {
     margin-top: 0.75rem;
   }
+}
+@media screen and (min-width: 680px) {
+  .tabbed {
+    position: relative;
+  }
 
-  /*
-      *:focus {
-          outline: none;
-          box-shadow: inset 0 0 0 4px lightBlue;
-      }
-  */
+  .section__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .planet__img__wrapper {
+    grid-area: 1/1/4/3;
+  }
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
