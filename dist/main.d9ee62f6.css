@@ -113,9 +113,18 @@ h1, h2, h3, h4 {
 .modal__scroll {
   height: 100vh;
   overflow-y: hidden;
-  /* Avoid width reflow */
 }
 
+@media screen and (min-width: 680px) {
+  .modal__scroll {
+    min-height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .main {
+    padding: 0.4rem 2.5rem;
+  }
+}
 .main__title {
   text-transform: uppercase;
   font-size: 1.75rem;
@@ -238,6 +247,7 @@ h1, h2, h3, h4 {
   }
 
   .main__nav__list {
+    display: flex;
     position: relative;
     left: 0;
     min-height: auto;
@@ -261,6 +271,7 @@ h1, h2, h3, h4 {
 
   .planet--btn {
     margin-left: auto;
+    opacity: 0.5;
   }
   .planet--btn::before {
     width: 0;
@@ -272,32 +283,6 @@ h1, h2, h3, h4 {
     height: 0;
   }
 }
-/*
-.btn-check {
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-    pointer-events: none;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-secondary {
-    border: .3rem solid transparent;
-
-    &:focus,
-    &:hover,
-    &:active {
-        color: #fff;
-        border-bottom: 3px solid red;
-        padding-bottom: .3rem;
-       // background-color: #a316fd;
-        cursor: pointer;
-    }
-}
-*/
 .tab__list {
   position: relative;
 }
@@ -357,30 +342,52 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
-/*
-[role="tablist"] li,
-[role="tablist"] a {
-    display: inline-block;
-    position: static;
-}
-
-
-[role="tablist"] a {
-    border: 2px solid #222 !important;
-}
-
-[role="tablist"] li+li a {
-    border-top: 0 !important;
-}
-
-[role="tablist"] [aria-selected] {
-    position: static;
-}
-*/
 [role=tabpanel] {
   border-top: 0;
 }
 
+@media screen and (min-width: 680px) {
+  .tab__list {
+    flex-direction: column;
+    min-width: 281px;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .tab__list::before, .tab__list::after {
+    width: 0;
+    height: 0;
+  }
+
+  .tab__list__item {
+    border: 1px solid white;
+  }
+
+  .tab__item--btn {
+    width: 100%;
+    display: inline-block;
+  }
+
+  [role=tablist] a {
+    text-decoration: none;
+    padding: 1rem 1em;
+  }
+
+  [role=tablist] [aria-selected]::after {
+    opacity: 0;
+  }
+
+  [role=tablist] [aria-selected] {
+    top: 0;
+    background-color: #545BFE;
+    opacity: 1;
+  }
+
+  [role=tabpanel] * + * {
+    margin-top: 0.75rem;
+  }
+}
 .planet__img__wrapper {
   margin: 7rem auto 5.5rem;
 }
@@ -408,6 +415,7 @@ h1, h2, h3, h4 {
 
 .planet__more--btn {
   color: white;
+  font-size: 0.75rem;
 }
 
 .source__img {
@@ -416,10 +424,15 @@ h1, h2, h3, h4 {
 
 .planet__details__source {
   margin-top: 2rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 .info__List {
   margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
 .info__list__item {
@@ -443,51 +456,32 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 680px) {
-  .tab__list {
+@media screen and (min-width: 384px) {
+  .info__list__item {
     flex-direction: column;
-    max-width: 281px;
     gap: 1rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  .tab__list::before, .tab__list::after {
-    width: 0;
-    height: 0;
-  }
-
-  .tab__list__item {
-    border: 1px solid white;
-  }
-
-  .tab__item--btn {
-    width: 100%;
-    display: inline-block;
-  }
-
-  [role=tablist] a {
-    text-decoration: none;
-    padding: 0.5rem 1em;
-  }
-
-  [role=tablist] [aria-selected]::after {
-    opacity: 0;
-  }
-
-  [role=tablist] [aria-selected] {
-    top: 0;
-    background-color: #545BFE;
-    opacity: 1;
-  }
-
-  [role=tabpanel] * + * {
-    margin-top: 0.75rem;
   }
 }
 @media screen and (min-width: 680px) {
+  .sections {
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  .planet__img {
+    width: 63.5%;
+  }
+
   .tabbed {
     position: relative;
+  }
+
+  .info__List {
+    margin-top: 1.8rem;
+  }
+
+  .planet__title {
+    font-size: 3rem;
   }
 
   .section__wrapper {
@@ -495,8 +489,40 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .planet__details__wrapper {
+    padding-top: 1rem;
+  }
+
   .planet__img__wrapper {
     grid-area: 1/1/4/3;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .section__wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .planet__details__wrapper {
+    padding-top: 0;
+    max-width: 350px;
+  }
+
+  .planet__img__wrapper {
+    margin: 7rem auto 10rem;
+  }
+
+  .planet__img {
+    width: 100%;
+  }
+
+  .planet__details {
+    font-size: 0.875rem;
+  }
+
+  .tab__list {
+    max-width: 350px;
+    width: 100%;
+    right: 8%;
   }
 }
 

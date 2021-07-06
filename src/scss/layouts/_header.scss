@@ -139,6 +139,7 @@
 	}
 
 	.main__nav__list {
+		display: flex;
 		position: relative;
 		left: 0;
 		min-height: auto;
@@ -164,6 +165,7 @@
 
 	.planet--btn {
 		margin-left: auto;
+		opacity: 0.5;
 
 		&::before {
 			width: 0;

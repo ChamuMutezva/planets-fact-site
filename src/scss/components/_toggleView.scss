@@ -1,31 +1,5 @@
 @use "../base";
 @use "sass:color";
-/*
-.btn-check {
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-    pointer-events: none;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-secondary {
-    border: .3rem solid transparent;
-
-    &:focus,
-    &:hover,
-    &:active {
-        color: #fff;
-        border-bottom: 3px solid red;
-        padding-bottom: .3rem;
-       // background-color: #a316fd;
-        cursor: pointer;
-    }
-}
-*/
 
 .tab__list {
     position: relative;
@@ -91,101 +65,18 @@
     position: relative;
 }
 
-/*
-[role="tablist"] li,
-[role="tablist"] a {
-    display: inline-block;
-    position: static;
-}
-
-
-[role="tablist"] a {
-    border: 2px solid #222 !important;
-}
-
-[role="tablist"] li+li a {
-    border-top: 0 !important;
-}
-
-[role="tablist"] [aria-selected] {
-    position: static;
-}
-*/
-
-
-
 
 [role="tabpanel"] {
     border-top: 0;
 }
 
-.planet__img__wrapper {
-    margin: 7rem auto 5.5rem;
-}
 
-.planet__img {
-    width: 34%;
-    margin: auto;
-}
-
-.sections {
-    text-align: center;
-}
-
-.planet__title {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.planet__details {
-    font-size: 0.6875rem;
-    line-height: 2.1;
-    margin-top: 1rem;
-}
-
-.planet__more--btn {
-    color: white;
-}
-
-.source__img {
-    display: inline;
-}
-
-.planet__details__source {
-    margin-top: 2rem;
-}
-
-.info__List {
-    margin-top: 1.5rem;
-}
-
-.info__list__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid white;
-    margin-bottom: 0.5rem;
-    padding: .6rem;
-}
-
-.info__list__data {
-    font-size: .5rem;
-    text-transform: uppercase;
-    color: base.$white;
-}
-
-.info__list__description {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
 
 @media screen and (min-width: 680px) {
-   
+  
     .tab__list {
         flex-direction: column;
-        max-width: 281px;
+        min-width: 281px;
         gap: 1rem;
         position: absolute;
         bottom: 0;
@@ -209,7 +100,7 @@
 
     [role="tablist"] a {
         text-decoration: none;
-        padding: 0.5rem 1em;
+        padding: 1rem 1em;
     }
 
     [role="tablist"] [aria-selected]::after {
