@@ -113,9 +113,18 @@ h1, h2, h3, h4 {
 .modal__scroll {
   height: 100vh;
   overflow-y: hidden;
-  /* Avoid width reflow */
 }
 
+@media screen and (min-width: 680px) {
+  .modal__scroll {
+    min-height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .main {
+    padding: 0.4rem 2.5rem;
+  }
+}
 .main__title {
   text-transform: uppercase;
   font-size: 1.75rem;
@@ -184,7 +193,7 @@ h1, h2, h3, h4 {
   content: "";
   width: 1.25rem;
   height: 1.25rem;
-  background-color: #DEF4FC;
+  background-color: #419EBB;
   border-radius: 50%;
   left: -2.5rem;
 }
@@ -223,31 +232,219 @@ h1, h2, h3, h4 {
   background-color: #497EFA;
 }
 
-/*
-.btn-check {
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-    pointer-events: none;
-}
+@media screen and (min-width: 680px) {
+  .main__heading {
+    padding: 2rem 3.2rem;
+  }
 
-.btn-group {
+  .modal__hide {
     display: flex;
+  }
+
+  .main__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main__nav__list {
+    display: flex;
+    position: relative;
+    left: 0;
+    min-height: auto;
+    width: 100%;
     justify-content: space-between;
+    margin-top: 0;
+    top: 0;
+  }
+
+  .planet {
+    margin-bottom: 0;
+  }
+  .planet::after {
+    width: 0;
+    height: 0;
+  }
+
+  .toggle--btn {
+    display: none;
+  }
+
+  .planet--btn {
+    margin-left: auto;
+    opacity: 0.5;
+  }
+  .planet--btn::before {
+    width: 0;
+    height: 0;
+  }
+  .planet--btn::after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .main__nav {
+    flex-direction: row;
+    align-items: first baseline;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__title {
+    flex: 1 1 50%;
+  }
+
+  .main__nav__list {
+    flex: 1 1 50%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+.theme-mercury [role=tablist] [aria-selected]::after {
+  background-color: #419EBB;
 }
 
-.btn-secondary {
-    border: .3rem solid transparent;
-
-    &:focus,
-    &:hover,
-    &:active {
-        color: #fff;
-        border-bottom: 3px solid red;
-        padding-bottom: .3rem;
-       // background-color: #a316fd;
-        cursor: pointer;
-    }
+@media screen and (min-width: 680px) {
+  .theme-mercury [role=tablist] [aria-selected] {
+    background-color: #419EBB;
+  }
 }
+@media screen and (min-width: 1080px) {
+  .theme-mercury .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #419EBB;
+  }
+}
+.theme-earth [role=tablist] [aria-selected]::after {
+  background-color: #545BFE;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-earth [role=tablist] [aria-selected] {
+    background-color: #545BFE;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-earth .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #545BFE;
+  }
+}
+.theme-jupiter [role=tablist] [aria-selected]::after {
+  background-color: #ECAD7A;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-jupiter [role=tablist] [aria-selected] {
+    background-color: #ECAD7A;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-jupiter .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #ECAD7A;
+  }
+}
+.theme-mars [role=tablist] [aria-selected]::after {
+  background-color: #FF6A45;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-mars [role=tablist] [aria-selected] {
+    background-color: #FF6A45;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-mars .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #FF6A45;
+  }
+}
+.theme-neptune [role=tablist] [aria-selected]::after {
+  background-color: #497EFA;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-neptune [role=tablist] [aria-selected] {
+    background-color: #497EFA;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-neptune .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #497EFA;
+  }
+}
+.theme-saturn [role=tablist] [aria-selected]::after {
+  background-color: #FCCB6B;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-saturn [role=tablist] [aria-selected] {
+    background-color: #FCCB6B;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-saturn .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #FCCB6B;
+  }
+}
+.theme-uranus [role=tablist] [aria-selected]::after {
+  background-color: #65F0D5;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-uranus [role=tablist] [aria-selected] {
+    background-color: #65F0D5;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-uranus .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #65F0D5;
+  }
+}
+.theme-venus [role=tablist] [aria-selected]::after {
+  background-color: #F7CC7F;
+}
+
+@media screen and (min-width: 680px) {
+  .theme-venus [role=tablist] [aria-selected] {
+    background-color: #F7CC7F;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .theme-venus .planet:hover::after {
+    width: 100%;
+    height: 3px;
+    top: -2.3rem;
+    background-color: #F7CC7F;
+  }
+}
+/*
+@include theme(theme-mercury, base.$mercury);
+@include theme(theme-earth, base.$earth);
+@include theme(theme-jupiter, base.$jupiter);
+@include theme(theme-mars, base.$mars);
+@include theme(theme-neptune, base.$neptune);
+@include theme(theme-saturn, base.$saturn);
+@include theme(theme-uranus, base.$uranus);
+@include theme(theme-venus, base.$venus);
 */
 .tab__list {
   position: relative;
@@ -277,11 +474,11 @@ h1, h2, h3, h4 {
 }
 
 [role=tablist] [aria-selected]::after {
-  content: " ⬅";
+  /* content: '\0020⬅'; */
   content: "";
   width: 100%;
   height: 0.3rem;
-  background-color: turquoise;
+  /* background-color: base.$mercury; */
   position: absolute;
   left: 0;
   bottom: -1.2rem;
@@ -308,30 +505,60 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
-/*
-[role="tablist"] li,
-[role="tablist"] a {
-    display: inline-block;
-    position: static;
-}
-
-
-[role="tablist"] a {
-    border: 2px solid #222 !important;
-}
-
-[role="tablist"] li+li a {
-    border-top: 0 !important;
-}
-
-[role="tablist"] [aria-selected] {
-    position: static;
-}
-*/
 [role=tabpanel] {
   border-top: 0;
 }
 
+.tab__number {
+  display: none;
+}
+
+@media screen and (min-width: 680px) {
+  .tab__list {
+    flex-direction: column;
+    min-width: 281px;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .tab__list::before, .tab__list::after {
+    width: 0;
+    height: 0;
+  }
+
+  .tab__list__item {
+    border: 1px solid white;
+  }
+
+  .tab__item--btn {
+    width: 100%;
+    display: inline-block;
+  }
+
+  [role=tablist] a {
+    text-decoration: none;
+    padding: 1rem 1em;
+  }
+
+  [role=tablist] [aria-selected]::after {
+    opacity: 0;
+  }
+
+  [role=tablist] [aria-selected] {
+    top: 0;
+    background-color: #545BFE;
+    opacity: 1;
+  }
+
+  [role=tabpanel] * + * {
+    margin-top: 0.75rem;
+  }
+
+  .tab__number {
+    display: inline;
+  }
+}
 .planet__img__wrapper {
   margin: 7rem auto 5.5rem;
 }
@@ -359,6 +586,7 @@ h1, h2, h3, h4 {
 
 .planet__more--btn {
   color: white;
+  font-size: 0.75rem;
 }
 
 .source__img {
@@ -367,10 +595,15 @@ h1, h2, h3, h4 {
 
 .planet__details__source {
   margin-top: 2rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 .info__List {
   margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
 .info__list__item {
@@ -394,35 +627,74 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 550px) {
-  [role=tablist] a {
-    text-decoration: none;
-    padding: 0.5rem 1em;
+@media screen and (min-width: 384px) {
+  .info__list__item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 680px) {
+  .sections {
+    text-align: left;
+    margin-top: 1rem;
   }
 
-  /*
-      [role="tablist"] [aria-selected] {
-          border: 2px solid;
-          background: #fff;
-          border-bottom: 0;
-          position: relative;
-          top: 2px;
-      }
-       [role="tabpanel"] {
-          border: 2px solid;
-          padding: 1.5rem;
-      }
-  */
-  [role=tabpanel] * + * {
-    margin-top: 0.75rem;
+  .planet__img {
+    width: 63.5%;
   }
 
-  /*
-      *:focus {
-          outline: none;
-          box-shadow: inset 0 0 0 4px lightBlue;
-      }
-  */
+  .tabbed {
+    position: relative;
+  }
+
+  .info__List {
+    margin-top: 1.8rem;
+  }
+
+  .planet__title {
+    font-size: 3rem;
+  }
+
+  .section__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .planet__details__wrapper {
+    padding-top: 1rem;
+  }
+
+  .planet__img__wrapper {
+    grid-area: 1/1/4/3;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .section__wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .planet__details__wrapper {
+    padding-top: 0;
+    max-width: 350px;
+  }
+
+  .planet__img__wrapper {
+    margin: 7rem auto 10rem;
+  }
+
+  .planet__img {
+    width: 100%;
+  }
+
+  .planet__details {
+    font-size: 0.875rem;
+  }
+
+  .tab__list {
+    max-width: 350px;
+    width: 100%;
+    right: 8%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

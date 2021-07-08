@@ -147,7 +147,7 @@
 		justify-content: space-between;
 		margin-top: 0;
 		top: 0;
-	}	
+	}
 
 	.planet {
 		margin-bottom: 0;
@@ -177,5 +177,26 @@
 			width: 0;
 			height: 0;
 		}
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.main__nav {
+		flex-direction: row;
+		align-items: first baseline;
+	}
+
+
+}
+
+@media screen and (min-width: 1280px) {
+	.main__title {
+		flex: 1 1 50%;
+	}
+
+	.main__nav__list {
+		flex: 1 1 50%;
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
