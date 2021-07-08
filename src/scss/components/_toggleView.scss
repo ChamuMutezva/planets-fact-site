@@ -1,4 +1,5 @@
 @use "../base";
+@use "../mixins";
 @use "sass:color";
 
 .tab__list {
@@ -37,11 +38,12 @@
     content: "";
     width: 100%;
     height: .3rem;
-    background-color: base.$mercury;
+    /* background-color: base.$mercury; */
     position: absolute;
     left: 0;
     bottom: -1.2rem;
     opacity: 1;
+
 }
 
 /*
@@ -68,6 +70,10 @@
 
 [role="tabpanel"] {
     border-top: 0;
+}
+
+.tab__number {
+	display: none;
 }
 
 
@@ -118,5 +124,9 @@
         margin-top: 0.75rem;
     }
 
+    .tab__number {
+        display: inline;
+    }
+    
 
 }

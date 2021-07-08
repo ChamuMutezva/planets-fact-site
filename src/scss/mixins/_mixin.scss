@@ -1,0 +1,42 @@
+@use '../base';
+
+@mixin theme($name, $color) {
+  .#{$name} {
+    [role="tablist"] [aria-selected]::after {
+      background-color: $color;
+    }
+  }
+
+  @media screen and(min-width: 680px) {
+    .#{$name} {
+      [role="tablist"] [aria-selected] {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+$themes: (theme-mercury: base.$mercury,
+  theme-earth: base.$earth,
+  theme-jupiter: base.$jupiter,
+  theme-mars: base.$mars,
+  theme-neptune: base.$neptune,
+  theme-saturn: base.$saturn,
+  theme-uranus: base.$uranus,
+  theme-venus: base.$venus);
+
+@each $theme,
+$color in $themes {
+  @include theme($theme, $color);
+}
+
+/*
+@include theme(theme-mercury, base.$mercury);
+@include theme(theme-earth, base.$earth);
+@include theme(theme-jupiter, base.$jupiter);
+@include theme(theme-mars, base.$mars);
+@include theme(theme-neptune, base.$neptune);
+@include theme(theme-saturn, base.$saturn);
+@include theme(theme-uranus, base.$uranus);
+@include theme(theme-venus, base.$venus);
+*/
