@@ -27,10 +27,12 @@
 
 .tab__item--btn {
     font-size: 0.5625rem;
-    color: base.$white;
+   // color: base.$white;
+    color: lighten(base.$white, 10%);
     position: relative;
     text-decoration: none;
     opacity: 0.5;
+    outline: none;
 }
 
 [role="tablist"] [aria-selected]::after {
@@ -65,6 +67,8 @@
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
+    flex-wrap: nowrap;
+    gap: 1rem;
 }
 
 
@@ -73,13 +77,13 @@
 }
 
 .tab__number {
-	display: none;
+    display: none;
 }
 
 
 
 @media screen and (min-width: 680px) {
-  
+
     .tab__list {
         flex-direction: column;
         min-width: 281px;
@@ -127,6 +131,6 @@
     .tab__number {
         display: inline;
     }
-    
+
 
 }

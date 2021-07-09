@@ -107,7 +107,7 @@ h1, h2, h3, h4 {
 }
 
 .main {
-  padding: 0.4rem 1.5rem;
+  padding: 0.4rem 1.5rem 3rem;
 }
 
 .modal__scroll {
@@ -122,7 +122,7 @@ h1, h2, h3, h4 {
   }
 
   .main {
-    padding: 0.4rem 2.5rem;
+    padding: 0.4rem 2.5rem 3rem;
   }
 }
 .main__title {
@@ -272,6 +272,7 @@ h1, h2, h3, h4 {
   .planet--btn {
     margin-left: auto;
     opacity: 0.5;
+    outline: none;
   }
   .planet--btn::before {
     width: 0;
@@ -303,21 +304,35 @@ h1, h2, h3, h4 {
 .theme-mercury [role=tablist] [aria-selected]::after {
   background-color: #419EBB;
 }
+.theme-mercury .planet:hover::after, .theme-mercury .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
+  background-color: #419EBB;
+}
 
 @media screen and (min-width: 680px) {
   .theme-mercury [role=tablist] [aria-selected] {
     background-color: #419EBB;
   }
+  .theme-mercury .planet:hover::after, .theme-mercury .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-mercury .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-mercury .planet:hover::after, .theme-mercury .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #419EBB;
   }
 }
 .theme-earth [role=tablist] [aria-selected]::after {
+  background-color: #545BFE;
+}
+.theme-earth .planet:hover::after, .theme-earth .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #545BFE;
 }
 
@@ -325,16 +340,23 @@ h1, h2, h3, h4 {
   .theme-earth [role=tablist] [aria-selected] {
     background-color: #545BFE;
   }
+  .theme-earth .planet:hover::after, .theme-earth .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-earth .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-earth .planet:hover::after, .theme-earth .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #545BFE;
   }
 }
 .theme-jupiter [role=tablist] [aria-selected]::after {
+  background-color: #ECAD7A;
+}
+.theme-jupiter .planet:hover::after, .theme-jupiter .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #ECAD7A;
 }
 
@@ -342,16 +364,23 @@ h1, h2, h3, h4 {
   .theme-jupiter [role=tablist] [aria-selected] {
     background-color: #ECAD7A;
   }
+  .theme-jupiter .planet:hover::after, .theme-jupiter .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-jupiter .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-jupiter .planet:hover::after, .theme-jupiter .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #ECAD7A;
   }
 }
 .theme-mars [role=tablist] [aria-selected]::after {
+  background-color: #FF6A45;
+}
+.theme-mars .planet:hover::after, .theme-mars .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #FF6A45;
 }
 
@@ -359,16 +388,23 @@ h1, h2, h3, h4 {
   .theme-mars [role=tablist] [aria-selected] {
     background-color: #FF6A45;
   }
+  .theme-mars .planet:hover::after, .theme-mars .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-mars .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-mars .planet:hover::after, .theme-mars .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #FF6A45;
   }
 }
 .theme-neptune [role=tablist] [aria-selected]::after {
+  background-color: #497EFA;
+}
+.theme-neptune .planet:hover::after, .theme-neptune .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #497EFA;
 }
 
@@ -376,16 +412,23 @@ h1, h2, h3, h4 {
   .theme-neptune [role=tablist] [aria-selected] {
     background-color: #497EFA;
   }
+  .theme-neptune .planet:hover::after, .theme-neptune .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-neptune .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-neptune .planet:hover::after, .theme-neptune .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #497EFA;
   }
 }
 .theme-saturn [role=tablist] [aria-selected]::after {
+  background-color: #FCCB6B;
+}
+.theme-saturn .planet:hover::after, .theme-saturn .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #FCCB6B;
 }
 
@@ -393,16 +436,23 @@ h1, h2, h3, h4 {
   .theme-saturn [role=tablist] [aria-selected] {
     background-color: #FCCB6B;
   }
+  .theme-saturn .planet:hover::after, .theme-saturn .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-saturn .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-saturn .planet:hover::after, .theme-saturn .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #FCCB6B;
   }
 }
 .theme-uranus [role=tablist] [aria-selected]::after {
+  background-color: #65F0D5;
+}
+.theme-uranus .planet:hover::after, .theme-uranus .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #65F0D5;
 }
 
@@ -410,16 +460,23 @@ h1, h2, h3, h4 {
   .theme-uranus [role=tablist] [aria-selected] {
     background-color: #65F0D5;
   }
+  .theme-uranus .planet:hover::after, .theme-uranus .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-uranus .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-uranus .planet:hover::after, .theme-uranus .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #65F0D5;
   }
 }
 .theme-venus [role=tablist] [aria-selected]::after {
+  background-color: #F7CC7F;
+}
+.theme-venus .planet:hover::after, .theme-venus .planet--btn:focus::after {
+  width: 25%;
+  height: 3px;
+  left: 0rem;
+  top: 2rem;
   background-color: #F7CC7F;
 }
 
@@ -427,13 +484,13 @@ h1, h2, h3, h4 {
   .theme-venus [role=tablist] [aria-selected] {
     background-color: #F7CC7F;
   }
+  .theme-venus .planet:hover::after, .theme-venus .planet--btn:focus::after {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1080px) {
-  .theme-venus .planet:hover::after {
-    width: 100%;
-    height: 3px;
+  .theme-venus .planet:hover::after, .theme-venus .planet--btn:focus::after {
     top: -2.3rem;
-    background-color: #F7CC7F;
   }
 }
 /*
@@ -467,10 +524,11 @@ h1, h2, h3, h4 {
 
 .tab__item--btn {
   font-size: 0.5625rem;
-  color: #ffffff;
+  color: white;
   position: relative;
   text-decoration: none;
   opacity: 0.5;
+  outline: none;
 }
 
 [role=tablist] [aria-selected]::after {
@@ -503,6 +561,8 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
+  flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 [role=tabpanel] {
@@ -587,6 +647,9 @@ h1, h2, h3, h4 {
 .planet__more--btn {
   color: white;
   font-size: 0.75rem;
+}
+.planet__more--btn:hover, .planet__more--btn:focus {
+  font-weight: 900;
 }
 
 .source__img {

@@ -3,6 +3,8 @@
   const menuModal = document.querySelector(".toggle--btn")
   const modal = document.querySelector(".main__nav__list")
   //tab trapping elements 
+  let mql = window.matchMedia('(max-width: 679px)');
+  console.log(mql)
   const focusableElements = Array.from(document.querySelectorAll(".planet--btn"))
   const firstFocusableElement = focusableElements[0]//first focusable element
   const lastFocusableElement = focusableElements[focusableElements.length - 1]// last focused element
@@ -10,28 +12,30 @@
   console.log(lastFocusableElement)
 
   //tab trapping method and call
-  document.addEventListener('keydown', function(e) {
-    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-  
-    if (!isTabPressed) {
-      return;
-    }
-  
-    if (e.shiftKey) { // if shift key pressed for shift + tab combination
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement.focus(); // add focus for the last focusable element
-        e.preventDefault();
+  if (mql.matches) {
+    document.addEventListener('keydown', function (e) {
+      let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+      if (!isTabPressed) {
+        return;
       }
-    } else { // if tab key is pressed
-      if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus(); // add focus for the first focusable element
-        e.preventDefault();
+
+      if (e.shiftKey) { // if shift key pressed for shift + tab combination
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus(); // add focus for the last focusable element
+          e.preventDefault();
+        }
+      } else { // if tab key is pressed
+        if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+          firstFocusableElement.focus(); // add focus for the first focusable element
+          e.preventDefault();
+        }
       }
-    }
-  });
-  
-  firstFocusableElement.focus();
-//end of tab trapping
+    });
+
+    firstFocusableElement.focus();
+  }
+  //end of tab trapping
 
   console.log(menuModal)
 
