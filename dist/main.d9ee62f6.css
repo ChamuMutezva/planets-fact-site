@@ -633,7 +633,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
-  flex-wrap: nowrap;
+  flex-wrap: no-wrap;
   gap: 1rem;
 }
 
