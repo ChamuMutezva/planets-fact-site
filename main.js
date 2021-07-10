@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 (function () {
   // toggle menu modal open
   const menuModal = document.querySelector(".toggle--btn")
@@ -40,6 +41,10 @@
   console.log(menuModal)
 
   menuModal.addEventListener("click", () => {
+    // gsap.set(".toggle--btn", {transformOrigin: "50% 50%"})
+    //  gsap.to(".toggle--btn", { duration: 2, rotation: 360 });
+    gsap.from(".toggle--btn", { duration: 1.5, opacity: 0, scale: 0.3, easy: "back" })
+    gsap.from(".planet", { duration: 1, opacity: 0, scale: 0.3, y: 150, stagger: 0.25 })
     console.log("button clicked")
     modal.classList.toggle("modal__hide")
     document.body.classList.toggle("modal__scroll")

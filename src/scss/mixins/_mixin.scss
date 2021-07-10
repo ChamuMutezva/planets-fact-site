@@ -2,17 +2,23 @@
 
 @mixin theme($name, $color) {
   .#{$name} {
+    [role="tablist"] [aria-selected] {
+      color: base.$white;
+    }
     [role="tablist"] [aria-selected]::after {
       background-color: $color;
     }
 
-    .planet:hover::after,  .planet--btn:focus::after  {
-      width: 25%;
-      height: 3px;
-      left: 0rem;
-      top: 2rem;
-      background-color: $color;        
+    .planet--btn {
+      outline: none;
+
+      &:hover::after,
+      &:focus::after {
+        transform: scale(1.5);
+      //  filter: brightness(0%) sepia(100%) invert(100%) contrast(100%) hue-rotate(673.2deg) saturate(98%) grayscale(96.5%);
+      }
     }
+
   }
 
   @media screen and(min-width: 680px) {
@@ -21,17 +27,25 @@
         background-color: $color;
       }
 
-      .planet:hover::after,  .planet--btn:focus::after  {
-        width: 100%;     
-                  
+      .planet:hover::after,
+      .planet--btn:focus::after {
+        width: 100%;
+        height: 3px;
+        left: 0rem;
+        top: 2rem;
+        background-color: $color;
+        transform: scale(1);
+
       }
     }
   }
 
   @media screen and(min-width: 1080px) {
     .#{$name} {
-      .planet:hover::after,  .planet--btn:focus::after  {       
-        top: -2.3rem;             
+
+      .planet:hover::after,
+      .planet--btn:focus::after {
+        top: -2.3rem;
       }
 
     }
