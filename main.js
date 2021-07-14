@@ -1,4 +1,4 @@
-import gsap from 'gsap'
+//import gsap from 'gsap'
 (function () {
   // toggle menu modal open
   const menuModal = document.querySelector(".toggle--btn")
