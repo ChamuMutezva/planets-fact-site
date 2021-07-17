@@ -3,6 +3,8 @@
   // toggle menu modal open
   const menuModal = document.querySelector(".toggle--btn")
   const modal = document.querySelector(".main__nav__list")
+  const tabBtns = Array.from(document.querySelectorAll(".tab__item--btn"))
+  console.log(tabBtns)
   //tab trapping elements 
   let mql = window.matchMedia('(max-width: 679px)');
   console.log(mql)
@@ -11,6 +13,20 @@
   const lastFocusableElement = focusableElements[focusableElements.length - 1]// last focused element
   console.log(firstFocusableElement)
   console.log(lastFocusableElement)
+
+  /*
+  focusableElements.forEach(planet => {
+    planet.addEventListener("click", ()=> {  
+      console.log("gsap")
+      gsap.from(".planet__img__wrapper", { duration: 1, opacity: 0, scale: 0.3, y: 150 })
+    })
+  })*/
+
+  tabBtns.forEach(tab => {
+    tab.addEventListener("click", ()=> {
+      gsap.from(".planet__img__wrapper", { duration: 3, opacity: 0, scale: 0.3, y: 150 })
+    })
+  })
 
   //tab trapping method and call
   if (mql.matches) {
