@@ -176,6 +176,11 @@ h1, h2, h3, h4 {
   background: transparent;
   border: none;
 }
+.toggle--btn:hover, .toggle--btn:focus {
+  cursor: pointer;
+  outline: dashed #ffffff;
+  outline-offset: 0.25em;
+}
 
 .planet--btn {
   position: relative;
@@ -331,6 +336,11 @@ h1, h2, h3, h4 {
   .theme-mercury [role=tablist] [aria-selected] {
     background-color: #419EBB;
   }
+  .theme-mercury .planet--btn:hover, .theme-mercury .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #419EBB;
+    outline-offset: 0.25em;
+  }
   .theme-mercury .planet:hover::after,
 .theme-mercury .planet--btn:focus::after {
     width: 100%;
@@ -363,6 +373,11 @@ h1, h2, h3, h4 {
 @media screen and (min-width: 680px) {
   .theme-earth [role=tablist] [aria-selected] {
     background-color: #545BFE;
+  }
+  .theme-earth .planet--btn:hover, .theme-earth .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #545BFE;
+    outline-offset: 0.25em;
   }
   .theme-earth .planet:hover::after,
 .theme-earth .planet--btn:focus::after {
@@ -397,6 +412,11 @@ h1, h2, h3, h4 {
   .theme-jupiter [role=tablist] [aria-selected] {
     background-color: #ECAD7A;
   }
+  .theme-jupiter .planet--btn:hover, .theme-jupiter .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #ECAD7A;
+    outline-offset: 0.25em;
+  }
   .theme-jupiter .planet:hover::after,
 .theme-jupiter .planet--btn:focus::after {
     width: 100%;
@@ -429,6 +449,11 @@ h1, h2, h3, h4 {
 @media screen and (min-width: 680px) {
   .theme-mars [role=tablist] [aria-selected] {
     background-color: #FF6A45;
+  }
+  .theme-mars .planet--btn:hover, .theme-mars .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #FF6A45;
+    outline-offset: 0.25em;
   }
   .theme-mars .planet:hover::after,
 .theme-mars .planet--btn:focus::after {
@@ -463,6 +488,11 @@ h1, h2, h3, h4 {
   .theme-neptune [role=tablist] [aria-selected] {
     background-color: #497EFA;
   }
+  .theme-neptune .planet--btn:hover, .theme-neptune .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #497EFA;
+    outline-offset: 0.25em;
+  }
   .theme-neptune .planet:hover::after,
 .theme-neptune .planet--btn:focus::after {
     width: 100%;
@@ -495,6 +525,11 @@ h1, h2, h3, h4 {
 @media screen and (min-width: 680px) {
   .theme-saturn [role=tablist] [aria-selected] {
     background-color: #FCCB6B;
+  }
+  .theme-saturn .planet--btn:hover, .theme-saturn .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #FCCB6B;
+    outline-offset: 0.25em;
   }
   .theme-saturn .planet:hover::after,
 .theme-saturn .planet--btn:focus::after {
@@ -529,6 +564,11 @@ h1, h2, h3, h4 {
   .theme-uranus [role=tablist] [aria-selected] {
     background-color: #65F0D5;
   }
+  .theme-uranus .planet--btn:hover, .theme-uranus .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #65F0D5;
+    outline-offset: 0.25em;
+  }
   .theme-uranus .planet:hover::after,
 .theme-uranus .planet--btn:focus::after {
     width: 100%;
@@ -561,6 +601,11 @@ h1, h2, h3, h4 {
 @media screen and (min-width: 680px) {
   .theme-venus [role=tablist] [aria-selected] {
     background-color: #F7CC7F;
+  }
+  .theme-venus .planet--btn:hover, .theme-venus .planet--btn:focus {
+    cursor: pointer;
+    outline: dashed #F7CC7F;
+    outline-offset: 0.25em;
   }
   .theme-venus .planet:hover::after,
 .theme-venus .planet--btn:focus::after {
@@ -615,6 +660,11 @@ h1, h2, h3, h4 {
   opacity: 0.5;
   outline: none;
 }
+.tab__item--btn:hover, .tab__item--btn:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
 
 [role=tablist] [aria-selected]::after {
   /* content: '\0020⬅'; */
@@ -628,17 +678,6 @@ h1, h2, h3, h4 {
   opacity: 1;
 }
 
-/*
-.tab__item--btn [aria-selected]::after,
-.tab__item--btn:focus::after {
-    content: "";
-    width: 100%;
-    height: .3rem;
-    background-color: turquoise;
-    position: absolute;
-    left: 0;
-    top: 5px;
-}*/
 [role=tablist] {
   padding: 0;
   display: flex;
@@ -679,6 +718,9 @@ h1, h2, h3, h4 {
   .tab__item--btn {
     width: 100%;
     display: inline-block;
+  }
+  .tab__item--btn:hover, .tab__item--btn:focus {
+    background-color: #D8D8D8;
   }
 
   [role=tablist] a {
@@ -732,9 +774,13 @@ h1, h2, h3, h4 {
 .planet__more--btn {
   color: white;
   font-size: 0.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .planet__more--btn:hover, .planet__more--btn:focus {
-  font-weight: 900;
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .source__img {
