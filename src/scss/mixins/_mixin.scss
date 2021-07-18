@@ -5,17 +5,18 @@
     [role="tablist"] [aria-selected] {
       color: base.$white;
     }
+
     [role="tablist"] [aria-selected]::after {
       background-color: $color;
     }
 
     .planet--btn {
-      outline: none;
-
+      outline: none;    
+     
       &:hover::after,
       &:focus::after {
-        transform: scale(1.5);
-      //  filter: brightness(0%) sepia(100%) invert(100%) contrast(100%) hue-rotate(673.2deg) saturate(98%) grayscale(96.5%);
+        transform: scale(1.5);    
+        
       }
     }
 
@@ -25,6 +26,14 @@
     .#{$name} {
       [role="tablist"] [aria-selected] {
         background-color: $color;
+      }
+
+      .planet--btn {        
+        &:hover, &:focus {
+          cursor: pointer;
+          outline: dashed $color;
+          outline-offset: 0.25em;
+        }
       }
 
       .planet:hover::after,

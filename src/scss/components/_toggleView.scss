@@ -27,12 +27,19 @@
 
 .tab__item--btn {
     font-size: 0.5625rem;
-   // color: base.$white;
+    // color: base.$white;
     color: lighten(base.$white, 10%);
     position: relative;
     text-decoration: none;
     opacity: 0.5;
     outline: none;
+
+    &:hover , &:focus{
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.25em;
+       // background-color: #D8D8D8;
+    }
 }
 
 [role="tablist"] [aria-selected]::after {
@@ -47,18 +54,6 @@
     opacity: 1;
 
 }
-
-/*
-.tab__item--btn [aria-selected]::after,
-.tab__item--btn:focus::after {
-    content: "";
-    width: 100%;
-    height: .3rem;
-    background-color: turquoise;
-    position: absolute;
-    left: 0;
-    top: 5px;
-}*/
 
 [role="tablist"] {
     padding: 0;
@@ -106,6 +101,10 @@
     .tab__item--btn {
         width: 100%;
         display: inline-block;
+
+        &:hover , &:focus{           
+            background-color: #D8D8D8;
+        }
     }
 
     [role="tablist"] a {

@@ -29,9 +29,17 @@
 .planet__more--btn {
     color: white;
     font-size: 0.75rem;
-    &:hover, &:focus {
-        font-weight: 900;
+    margin-left: .5rem;
+    margin-right: .5rem;
+
+    &:hover,
+    &:focus {
+        // font-weight: 900;
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.25em;
     }
+
 }
 
 .source__img {
@@ -119,6 +127,7 @@
     .section__wrapper {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .planet__details__wrapper {
         padding-top: 0;
         max-width: 350px;
@@ -131,12 +140,14 @@
     .planet__img {
         width: 100%;
     }
+
     .planet__details {
-        font-size: 0.875rem;       
+        font-size: 0.875rem;
     }
-    .tab__list {        
-        max-width: 350px;  
-        width: 100%;  
-        right: 8%;    
+
+    .tab__list {
+        max-width: 350px;
+        width: 100%;
+        right: 8%;
     }
 }
