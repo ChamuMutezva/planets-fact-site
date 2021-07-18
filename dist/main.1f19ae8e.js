@@ -118,7 +118,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-//import gsap from 'gsap'
+//import gsap from 'gsap' *** did not work as this is an
+// html , javascript project. compiler like babel needed to 
+//convert ECMAScript 2015+ code into a backwards compatible
+// version of JavaScript in current and older browsers or environments
 (function () {
   // toggle menu modal open
   var menuModal = document.querySelector(".toggle--btn");
@@ -139,9 +142,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   focusableElements.forEach(planet => {
     planet.addEventListener("click", ()=> {  
       console.log("gsap")
-      gsap.from(".planet__img__wrapper", { duration: 1, opacity: 0, scale: 0.3, y: 150 })
+      gsap.from(".tabbed", { duration: 3, opacity: 0, scale: 0.3, y: 150 })
     })
-  })*/
+  })
+  */
 
   tabBtns.forEach(function (tab) {
     tab.addEventListener("click", function () {
@@ -300,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53724" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64150" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
