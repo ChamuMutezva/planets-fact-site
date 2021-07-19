@@ -1,5 +1,6 @@
 @use '../base';
 
+//themes
 @mixin theme($name, $color) {
   .#{$name} {
     [role="tablist"] [aria-selected] {
@@ -15,9 +16,9 @@
      
       &:hover::after,
       &:focus::after {
-        transform: scale(1.5);    
-        
+        transform: scale(1.5);           
       }
+
     }
 
   }

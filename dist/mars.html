@@ -1,1 +1,183 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.b532600b.png"><title>Frontend Mentor | Planets fact site</title><link rel="stylesheet" href="/style.74155c33.css"><link rel="stylesheet" href="/main.74155c33.css"></head><body> <div class="theme-mars wrapper"> <header class="main__heading"> <nav class="main__nav"> <h1 class="main__title">The planets</h1> <button type="button" class="toggle--btn"> <img class="img__toggle--btn" src="/icon-hamburger.dd0e1133.svg" alt="main menu"> </button> <ul class="main__nav__list modal__hide"> <li class="planet"> <a class="mercury--btn planet--btn" href="/index.html">Mercury</a> </li> <li class="planet"> <a class="planet--btn venus--btn" href="/venus.html">Venus</a> </li> <li class="planet"> <a class="earth--btn planet--btn" href="/earth.html">Earth</a> </li> <li class="planet"> <a class="mars--btn planet--btn" href="/mars.html">Mars</a> </li> <li class="planet"> <a class="jupiter--btn planet--btn" href="/jupiter.html">Jupiter</a> </li> <li class="planet"> <a class="planet--btn saturn--btn" href="/saturn.html">Saturn</a> </li> <li class="planet"> <a class="planet--btn uranus--btn" href="/uranus.html">Uranus</a> </li> <li class="planet"> <a class="neptune--btn planet--btn" href="/neptune.html">Neptune</a> </li> </ul> </nav> </header> <main class="main"> <div class="tabbed"> <ul class="mars__tab tab__list"> <li class="tab__list__item"> <a class="tab__item--btn" href="#section1"> <span class="tab__number">01</span> Overview </a> </li> <li class="tab__list__item"> <a class="tab__item--btn" href="#section2"> <span class="tab__number">02</span> Internal Structure </a> </li> <li class="tab__list__item"> <a class="tab__item--btn" href="#section3"> <span class="tab__number">03</span> Surface Geology </a> </li> </ul>  <section class="sections" id="section1"> <div class="section__wrapper"> <div class="planet__img__wrapper"> <img class="planet__img" src="/planet-mars.3017cafc.svg" alt="Overview Content of planet mars"> </div> <div class="planet__details__wrapper"> <h2 class="planet__title">Mars</h2> <p class="planet__details"> Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet". </p> <div class="planet__details__source"> <span>Source: </span> <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars">Wikipedia </a>  <img class="source__img" src="/icon-source.a788556c.svg" alt=""> </div> </div> </div> </section>   <section class="sections" id="section2"> <div class="section__wrapper"> <div class="planet__img__wrapper"> <img class="planet__img" src="/planet-mars-internal.9d4760d9.svg" alt="Internal Structure Content of planet mars"> </div> <div class="planet__details__wrapper"> <h2 class="planet__title">Mars</h2> <p class="planet__details"> Like Earth, Mars has differentiated into a dense metallic core overlaid by less dense materials. Scientists initially determined that the core is at least partially liquid. Current models of its interior imply a core consisting primarily of iron and nickel with about 16–17% sulfur. </p> <div class="planet__details__source"> <span>Source: </span> <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars#Internal_structure">Wikipedia </a>  <img class="source__img" src="/icon-source.a788556c.svg" alt=""> </div> </div> </div> </section>   <section class="sections" id="section3"> <div class="section__wrapper"> <div class="planet__img__wrapper"> <img class="planet__img" src="/geology-mars.5da5dbc8.png" alt="Surface Geology Content of planet mars"> </div> <div class="planet__details__wrapper"> <h2 class="planet__title">Mars</h2> <p class="planet__details"> Mars is a terrestrial planet whose surface consists of minerals containing silicon and oxygen, metals, and other elements that typically make up rock. The surface is primarily composed of tholeiitic basalt, although parts are more silica-rich than typical basalt. </p> <div class="planet__details__source"> <span>Source: </span> <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars#Surface_geology"> Wikipedia </a>  <img class="source__img" src="/icon-source.a788556c.svg" alt=""> </div> </div> </div> </section>  </div> <dl class="info__List"> <div class="info__list__item rotation"> <dt class="info__list__data"> Rotation Time</dt> <dd class="info__list__description"> 1.03 Days</dd> </div> <div class="info__list__item revolution"> <dt class="info__list__data">Revolution Time</dt> <dd class="info__list__description">1.88 Years</dd> </div> <div class="info__list__item radius"> <dt class="info__list__data">Radius</dt> <dd class="info__list__description">3,389.5 KM</dd> </div> <div class="info__list__item temperature"> <dt class="info__list__data">Average Temp.</dt> <dd class="info__list__description">-28°c</dd> </div> </dl> </main> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script> <script src="/main.77bc59f1.js"></script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.1e0171f0.png">
+
+  <title>Frontend Mentor | Planets fact site</title>
+  <link rel="stylesheet" href="/style.967ba849.css">
+  <link rel="stylesheet" href="/main.d9ee62f6.css">
+</head>
+
+<body>
+  <div class="wrapper theme-mars">
+    <header class="main__heading">
+      <nav class="main__nav">
+        <h1 class="main__title">The planets</h1>
+
+        <button type="button" class="toggle--btn">
+          <img class="img__toggle--btn" src="/icon-hamburger.b10fec51.svg" alt="main menu">
+        </button>
+        <ul class="main__nav__list modal__hide">
+          <li class="planet">
+            <a class="planet--btn mercury--btn" href="/index.html">Mercury</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn venus--btn" href="/venus.html">Venus</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn earth--btn" href="/earth.html">Earth</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn mars--btn" href="/mars.html">Mars</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn jupiter--btn" href="/jupiter.html">Jupiter</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn saturn--btn" href="/saturn.html">Saturn</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn uranus--btn" href="/uranus.html">Uranus</a>
+          </li>
+          <li class="planet">
+            <a class="planet--btn neptune--btn" href="/neptune.html">Neptune</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+      <div class="tabbed">
+        <ul class="tab__list mars__tab">
+          <li class="tab__list__item">            
+            <a class="tab__item--btn" href="#section1">
+              <span class="tab__number">01</span>
+              Overview
+            </a>
+          </li>
+          
+          <li class="tab__list__item">            
+            <a class="tab__item--btn" href="#section2">
+              <span class="tab__number">02</span>
+              Internal Structure
+            </a>
+          </li>
+
+          <li class="tab__list__item">            
+            <a class="tab__item--btn" href="#section3">
+              <span class="tab__number">03</span>
+              Surface Geology
+            </a>
+          </li>
+        </ul>
+        <!-- Overview Content Start -->
+        <section class="sections" id="section1">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/planet-mars.10174bd4.svg" alt="Overview Content of planet mars">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Mars</h2>
+              <p class="planet__details">
+                Mars is the fourth planet from the Sun and the second-smallest planet
+                in the Solar System, being larger than only Mercury. In English, Mars
+                carries the name of the Roman god of war and is often referred to as
+                the "Red Planet".
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars">Wikipedia
+                </a>
+                <!-- URL: https://en.wikipedia.org/wiki/Mars -->
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Overview Content End -->
+
+        <!-- Internal Structure Content Start -->
+        <section class="sections" id="section2">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/planet-mars-internal.f5760591.svg" alt="Internal Structure Content of planet mars">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Mars</h2>
+              <p class="planet__details">
+                Like Earth, Mars has differentiated into a dense metallic core overlaid
+                by less dense materials. Scientists initially determined that the core
+                is at least partially liquid. Current models of its interior imply a
+                core consisting primarily of iron and nickel with about 16–17% sulfur.
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars#Internal_structure">Wikipedia
+                </a>
+                 <!-- URL: https://en.wikipedia.org/wiki/Mars#Internal_structure -->
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Internal Structure Content End -->
+
+        <!-- Surface Geology Content Start -->
+        <section class="sections" id="section3">
+          <div class="section__wrapper">
+            <div class="planet__img__wrapper">
+              <img class="planet__img" src="/planet-mars.10174bd4.svg" alt="Overview Content of planet mars">
+              <img class="planet__img geology" src="/geology-mars.a52c37b6.png" alt="Surface Geology Content of planet mars">
+            </div>
+            <div class="planet__details__wrapper">
+              <h2 class="planet__title">Mars</h2>
+              <p class="planet__details"> Mars is a terrestrial planet whose surface consists of minerals containing
+                silicon and oxygen, metals, and other elements that typically make up rock.
+                The surface is primarily composed of tholeiitic basalt, although parts are
+                more silica-rich than typical basalt.
+              </p>
+              <div class="planet__details__source">
+                <span>Source: </span>
+                <a class="planet__more--btn" href="https://en.wikipedia.org/wiki/Mars#Surface_geology">
+                  Wikipedia </a>
+                   <!-- URL: https://en.wikipedia.org/wiki/Mars#Surface_geology -->
+                <img class="source__img" src="/icon-source.715100f4.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Surface Geology Content End -->
+      </div>
+
+      <dl class="info__List">
+        <div class="info__list__item rotation">
+          <dt class="info__list__data"> Rotation Time</dt>
+          <dd class="info__list__description"> 1.03 Days</dd>
+        </div>
+        <div class="info__list__item revolution">
+          <dt class="info__list__data">Revolution Time</dt>
+          <dd class="info__list__description">1.88 Years</dd>
+        </div>
+        <div class="info__list__item radius">
+          <dt class="info__list__data">Radius</dt>
+          <dd class="info__list__description">3,389.5 KM</dd>
+        </div>
+        <div class="info__list__item temperature">
+          <dt class="info__list__data">Average Temp.</dt>
+          <dd class="info__list__description">-28°c</dd>
+        </div>
+      </dl>
+
+    </main>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>   
+  <script src="/main.1f19ae8e.js"></script> 
+</body>
+
+</html>

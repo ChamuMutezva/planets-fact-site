@@ -750,11 +750,19 @@ h1, h2, h3, h4 {
 }
 .planet__img__wrapper {
   margin: 7rem auto 5.5rem;
+  position: relative;
 }
 
 .planet__img {
-  width: 34%;
+  width: 50%;
   margin: auto;
+}
+
+.geology {
+  position: absolute;
+  width: 30%;
+  bottom: -25%;
+  left: 35%;
 }
 
 .sections {
@@ -839,6 +847,11 @@ h1, h2, h3, h4 {
     width: 63.5%;
   }
 
+  .geology {
+    width: 35%;
+    left: 32.5%;
+  }
+
   .tabbed {
     position: relative;
   }
@@ -880,6 +893,14 @@ h1, h2, h3, h4 {
 
   .planet__img {
     width: 100%;
+  }
+
+  .geology {
+    width: 35%;
+  }
+
+  .saturn__geology {
+    top: 35%;
   }
 
   .planet__details {
