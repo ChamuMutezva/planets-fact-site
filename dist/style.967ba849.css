@@ -720,6 +720,8 @@ h1, h2, h3, h4 {
   .tab__item--btn {
     width: 100%;
     display: inline-block;
+    letter-spacing: 2px;
+    line-height: 1.5;
   }
   .tab__item--btn:hover, .tab__item--btn:focus {
     background-color: #D8D8D8;
