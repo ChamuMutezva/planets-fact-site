@@ -34,11 +34,12 @@
     opacity: 0.5;
     outline: none;
 
-    &:hover , &:focus{
+    &:hover,
+    &:focus {
         cursor: pointer;
         outline: dashed currentColor;
         outline-offset: 0.25em;
-       // background-color: #D8D8D8;
+        // background-color: #D8D8D8;
     }
 }
 
@@ -101,8 +102,11 @@
     .tab__item--btn {
         width: 100%;
         display: inline-block;
+        letter-spacing: 2px;
+        line-height: 1.5;
 
-        &:hover , &:focus{           
+        &:hover,
+        &:focus {
             background-color: #D8D8D8;
         }
     }
