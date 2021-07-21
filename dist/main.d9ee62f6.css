@@ -905,7 +905,6 @@ h1, h2, h3, h4 {
 
   .planet__details__wrapper {
     padding-top: 0;
-    min-width: 420px;
   }
 
   .planet__img__wrapper {
@@ -929,9 +928,9 @@ h1, h2, h3, h4 {
   }
 
   .tab__list {
-    max-width: 350px;
+    max-width: 410px;
     width: 100%;
-    right: 8%;
+    right: 0;
   }
 
   .planet__title {

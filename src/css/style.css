@@ -699,6 +699,20 @@ h1, h2, h3, h4 {
   display: none;
 }
 
+.tab__item__hide {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+  display: inline-block;
+}
+
 @media screen and (min-width: 680px) {
   .tab__list {
     flex-direction: column;
@@ -746,8 +760,13 @@ h1, h2, h3, h4 {
     margin-top: 0.75rem;
   }
 
-  .tab__number {
+  .tab__number, .tab__item__hide {
     display: inline;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .tab__item--btn {
+    font-size: 0.75rem;
   }
 }
 .planet__img__wrapper {
@@ -886,7 +905,6 @@ h1, h2, h3, h4 {
 
   .planet__details__wrapper {
     padding-top: 0;
-    max-width: 350px;
   }
 
   .planet__img__wrapper {
@@ -910,9 +928,21 @@ h1, h2, h3, h4 {
   }
 
   .tab__list {
-    max-width: 350px;
+    max-width: 410px;
     width: 100%;
-    right: 8%;
+    right: 0;
+  }
+
+  .planet__title {
+    font-size: 5rem;
+  }
+
+  .info__list__data {
+    font-size: 0.6875rem;
+  }
+
+  .planet__details__source {
+    margin-top: 0;
   }
 }
 
