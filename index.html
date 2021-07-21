@@ -13,7 +13,7 @@
     rel="stylesheet">
   <title>Frontend Mentor | Planets fact site</title>
   <link rel="stylesheet" href="./src/css/style.css">
- <link rel="stylesheet" href="/src/scss/main.scss"> 
+  <link rel="stylesheet" href="/src/scss/main.scss">
 </head>
 
 <body>
@@ -22,33 +22,34 @@
       <nav class="main__nav">
         <h1 class="main__title">The planets</h1>
 
-        <button type="button" class="toggle--btn">
+        <button type="button" class="toggle--btn" id="menu__toggle--btn" aria-haspopup="true" aria-controls="nav__menu">
           <img class="img__toggle--btn" src="./assets/icon-hamburger.svg" alt="main menu">
         </button>
-        <ul class="main__nav__list modal__hide">
-          <li class="planet">
-            <a class="planet--btn mercury--btn" href="./index.html">Mercury</a>
+
+        <ul class="main__nav__list modal__hide" id="nav__menu" role="menu" aria-label="planets navigation menu">
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn mercury--btn" href="./index.html">Mercury</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn venus--btn" href="./venus.html">Venus</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn venus--btn" href="./venus.html">Venus</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn earth--btn" href="./earth.html">Earth</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn earth--btn" href="./earth.html">Earth</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn mars--btn" href="./mars.html">Mars</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn mars--btn" href="./mars.html">Mars</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn jupiter--btn" href="./jupiter.html">Jupiter</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn jupiter--btn" href="./jupiter.html">Jupiter</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn saturn--btn" href="./saturn.html">Saturn</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn saturn--btn" href="./saturn.html">Saturn</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn uranus--btn" href="./uranus.html">Uranus</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn uranus--btn" href="./uranus.html">Uranus</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn neptune--btn" href="./neptune.html">Neptune</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn neptune--btn" href="./neptune.html">Neptune</a>
           </li>
         </ul>
       </nav>
@@ -57,24 +58,24 @@
 
       <div class="tabbed">
         <ul class="tab__list mercury__tab">
-          <li class="tab__list__item">            
+          <li class="tab__list__item">
             <a class="tab__item--btn" href="#section1">
               <span class="tab__number">01</span>
               Overview
             </a>
           </li>
-          
-          <li class="tab__list__item">            
+
+          <li class="tab__list__item">
             <a class="tab__item--btn" href="#section2">
               <span class="tab__number">02</span>
-              Internal Structure
+              <span class="tab__item__hide">Internal</span> Structure
             </a>
           </li>
 
-          <li class="tab__list__item">            
+          <li class="tab__list__item">
             <a class="tab__item--btn" href="#section3">
               <span class="tab__number">03</span>
-              Surface Geology
+              Surface <span class="tab__item__hide">Geology</span>
             </a>
           </li>
 
@@ -83,8 +84,7 @@
         <section class="sections" id="section1">
           <div class="section__wrapper">
             <div class="planet__img__wrapper">
-              <img class="planet__img" src="./assets/planet-mercury.svg"
-               alt="Overview Content of planet mercury">
+              <img class="planet__img" src="./assets/planet-mercury.svg" alt="Overview Content of planet mercury">
             </div>
             <div class="planet__details__wrapper">
               <h2 class="planet__title">Mercury</h2>
@@ -109,8 +109,8 @@
         <section class="sections" id="section2">
           <div class="section__wrapper">
             <div class="planet__img__wrapper">
-              <img class="planet__img" src="./assets/planet-mercury-internal.svg" 
-              alt="Internal Structure Content of planet mercury">
+              <img class="planet__img" src="./assets/planet-mercury-internal.svg"
+                alt="Internal Structure Content of planet mercury">
             </div>
             <div class="planet__details__wrapper">
               <h2 class="planet__title">Mercury</h2>
@@ -136,10 +136,9 @@
         <section class="sections" id="section3">
           <div class="section__wrapper">
             <div class="planet__img__wrapper">
-              <img class="planet__img" src="./assets/planet-mercury.svg"
-               alt="Overview Content of planet mercury">
-              <img class="planet__img geology" src="./assets/geology-mercury.png" 
-              alt="Surface Geology Content of planet mercury">
+              <img class="planet__img" src="./assets/planet-mercury.svg" alt="Overview Content of planet mercury">
+              <img class="planet__img geology" src="./assets/geology-mercury.png"
+                alt="Surface Geology Content of planet mercury">
             </div>
             <div class="planet__details__wrapper">
               <h2 class="planet__title">Mercury</h2>
@@ -184,7 +183,7 @@
 
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
   <script src="./main.js"></script>
 </body>
 

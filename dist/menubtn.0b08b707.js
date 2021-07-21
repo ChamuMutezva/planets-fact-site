@@ -117,165 +117,113 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"main.js":[function(require,module,exports) {
-//import gsap from 'gsap' *** did not work as this is an
-// html , javascript project. compiler like babel needed to 
-//convert ECMAScript 2015+ code into a backwards compatible
-// version of JavaScript in current and older browsers or environments
-(function () {
-  // toggle menu modal open
-  var menuModal = document.querySelector(".toggle--btn");
-  var modal = document.querySelector(".main__nav__list");
-  var tabBtns = Array.from(document.querySelectorAll(".tab__item--btn"));
-  console.log(tabBtns); //tab trapping elements 
+})({"menubtn.js":[function(require,module,exports) {
+/* var Menubutton = function (domNode) {
 
-  var mql = window.matchMedia('(max-width: 679px)');
-  console.log(mql);
-  var focusableElements = Array.from(document.querySelectorAll(".planet--btn"));
-  var firstFocusableElement = focusableElements[0]; //first focusable element
-
-  var lastFocusableElement = focusableElements[focusableElements.length - 1]; // last focused element
-
-  console.log(firstFocusableElement);
-  console.log(lastFocusableElement);
-  /*
-  focusableElements.forEach(planet => {
-    planet.addEventListener("click", ()=> {  
-      console.log("gsap")
-      gsap.from(".tabbed", { duration: 3, opacity: 0, scale: 0.3, y: 150 })
-    })
-  })
+    this.domNode   = domNode;
+    this.popupMenu = false;
+  
+    this.hasFocus = false;
+    this.hasHover = false;
+  
+    this.keyCode = Object.freeze({
+      'TAB': 9,
+      'RETURN': 13,
+      'ESC': 27,
+      'SPACE': 32,
+      'PAGEUP': 33,
+      'PAGEDOWN': 34,
+      'END': 35,
+      'HOME': 36,
+      'LEFT': 37,
+      'UP': 38,
+      'RIGHT': 39,
+      'DOWN': 40
+    });
+  };
+  
+  Menubutton.prototype.init = function () {
+  
+    this.domNode.setAttribute('aria-haspopup', 'true');
+  
+    this.domNode.addEventListener('keydown',    this.handleKeydown.bind(this));
+    this.domNode.addEventListener('click',      this.handleClick.bind(this));
+    this.domNode.addEventListener('focus',      this.handleFocus.bind(this));
+    this.domNode.addEventListener('blur',       this.handleBlur.bind(this));
+    this.domNode.addEventListener('mouseover',  this.handleMouseover.bind(this));
+    this.domNode.addEventListener('mouseout',   this.handleMouseout.bind(this));
+  
+    // initialize pop up menus
+  
+    var popupMenu = document.getElementById(this.domNode.getAttribute('aria-controls'));
+  
+    if (popupMenu) {
+      this.popupMenu = new PopupMenuLinks(popupMenu, this);
+      this.popupMenu.init();
+    }
+  
+  };
+  
+  Menubutton.prototype.handleKeydown = function (event) {
+    var flag = false;
+  
+    switch (event.keyCode) {
+      case this.keyCode.SPACE:
+      case this.keyCode.RETURN:
+      case this.keyCode.DOWN:
+        if (this.popupMenu) {
+          this.popupMenu.open();
+          this.popupMenu.setFocusToFirstItem();
+        }
+        flag = true;
+        break;
+  
+      case this.keyCode.UP:
+        if (this.popupMenu) {
+          this.popupMenu.open();
+          this.popupMenu.setFocusToLastItem();
+          flag = true;
+        }
+        break;
+  
+      default:
+        break;
+    }
+  
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  };
+  
+  Menubutton.prototype.handleClick = function (event) {
+    if (this.domNode.getAttribute('aria-expanded') == 'true') {
+      this.popupMenu.close(true);
+    }
+    else {
+      this.popupMenu.open();
+      this.popupMenu.setFocusToFirstItem();
+    }
+  };
+  
+  Menubutton.prototype.handleFocus = function (event) {
+    this.popupMenu.hasFocus = true;
+  };
+  
+  Menubutton.prototype.handleBlur = function (event) {
+    this.popupMenu.hasFocus = false;
+  };
+  
+  Menubutton.prototype.handleMouseover = function (event) {
+    this.hasHover = true;
+    this.popupMenu.open();
+  };
+  
+  Menubutton.prototype.handleMouseout = function (event) {
+    this.hasHover = false;
+    setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
+  };
   */
-
-  tabBtns.forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      gsap.from(".planet__img__wrapper", {
-        duration: 3,
-        opacity: 0,
-        scale: 0.3,
-        y: 150
-      });
-    });
-  }); //tab trapping method and call
-
-  if (mql.matches) {
-    document.addEventListener('keydown', function (e) {
-      var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-      if (!isTabPressed) {
-        return;
-      }
-
-      if (e.shiftKey) {
-        // if shift key pressed for shift + tab combination
-        if (document.activeElement === firstFocusableElement) {
-          lastFocusableElement.focus(); // add focus for the last focusable element
-
-          e.preventDefault();
-        }
-      } else {
-        // if tab key is pressed
-        if (document.activeElement === lastFocusableElement) {
-          // if focused has reached to last focusable element then focus first focusable element after pressing tab
-          firstFocusableElement.focus(); // add focus for the first focusable element
-
-          e.preventDefault();
-        }
-      }
-    });
-    firstFocusableElement.focus();
-  } //end of tab trapping
-
-
-  console.log(menuModal);
-  menuModal.addEventListener("click", function () {
-    // gsap.set(".toggle--btn", {transformOrigin: "50% 50%"})
-    //  gsap.to(".toggle--btn", { duration: 2, rotation: 360 });
-    gsap.from(".toggle--btn", {
-      duration: 1.5,
-      opacity: 0,
-      scale: 0.3,
-      easy: "back"
-    });
-    gsap.from(".planet", {
-      duration: 1,
-      opacity: 0,
-      scale: 0.3,
-      y: 150,
-      stagger: 0.25
-    });
-    console.log("button clicked");
-    modal.classList.toggle("modal__hide");
-    document.body.classList.toggle("modal__scroll");
-  }); // Get relevant elements and collections
-
-  var tabbed = document.querySelector('.tabbed');
-  var tablist = tabbed.querySelector('ul');
-  var tabs = tablist.querySelectorAll('a');
-  var panels = tabbed.querySelectorAll('[id^="section"]'); // The tab switching function
-
-  var switchTab = function switchTab(oldTab, newTab) {
-    newTab.focus(); // Make the active tab focusable by the user (Tab key)
-
-    newTab.removeAttribute('tabindex'); // Set the selected state
-
-    newTab.setAttribute('aria-selected', 'true');
-    oldTab.removeAttribute('aria-selected');
-    oldTab.setAttribute('tabindex', '-1'); // Get the indices of the new and old tabs to find the correct
-    // tab panels to show and hide
-
-    var index = Array.prototype.indexOf.call(tabs, newTab);
-    var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
-    panels[oldIndex].hidden = true;
-    panels[index].hidden = false;
-  }; // Add the tablist role to the first <ul> in the .tabbed container
-
-
-  tablist.setAttribute('role', 'tablist'); // Add semantics are remove user focusability for each tab
-
-  Array.prototype.forEach.call(tabs, function (tab, i) {
-    tab.setAttribute('role', 'tab');
-    tab.setAttribute('id', 'tab' + (i + 1));
-    tab.setAttribute('tabindex', '-1');
-    tab.parentNode.setAttribute('role', 'presentation'); // Handle clicking of tabs for mouse users
-
-    tab.addEventListener('click', function (e) {
-      e.preventDefault();
-      var currentTab = tablist.querySelector('[aria-selected]');
-
-      if (e.currentTarget !== currentTab) {
-        switchTab(currentTab, e.currentTarget);
-      }
-    }); // Handle keydown events for keyboard users
-
-    tab.addEventListener('keydown', function (e) {
-      // Get the index of the current tab in the tabs node list
-      var index = Array.prototype.indexOf.call(tabs, e.currentTarget); // Work out which key the user is pressing and
-      // Calculate the new tab's index where appropriate
-
-      var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
-
-      if (dir !== null) {
-        e.preventDefault(); // If the down key is pressed, move focus to the open panel,
-        // otherwise switch to the adjacent tab
-
-        dir === 'down' ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
-      }
-    });
-  }); // Add tab panel semantics and hide them all
-
-  Array.prototype.forEach.call(panels, function (panel, i) {
-    panel.setAttribute('role', 'tabpanel');
-    panel.setAttribute('tabindex', '-1');
-    var id = panel.getAttribute('id');
-    panel.setAttribute('aria-labelledby', tabs[i].id);
-    panel.hidden = true;
-  }); // Initially activate the first tab and reveal the first tab panel
-
-  tabs[0].removeAttribute('tabindex');
-  tabs[0].setAttribute('aria-selected', 'true');
-  panels[0].hidden = false;
-})();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -480,5 +428,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.1f19ae8e.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","menubtn.js"], null)
+//# sourceMappingURL=/menubtn.0b08b707.js.map

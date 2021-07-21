@@ -143,7 +143,7 @@
 
     .planet__details__wrapper {
         padding-top: 0;
-        max-width: 350px;
+        min-width: 420px;
     }
 
     .planet__img__wrapper {
@@ -171,4 +171,14 @@
         width: 100%;
         right: 8%;
     }
+    .planet__title {
+        font-size: 5rem;
+    }
+    .info__list__data {
+        font-size: 0.6875rem;        
+    }
+    .planet__details__source {
+        margin-top: 0;      
+    }
+    
 }

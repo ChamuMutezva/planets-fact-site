@@ -18,33 +18,34 @@
       <nav class="main__nav">
         <h1 class="main__title">The planets</h1>
 
-        <button type="button" class="toggle--btn">
+        <button type="button" class="toggle--btn" id="menu__toggle--btn" aria-haspopup="true" aria-controls="nav__menu">
           <img class="img__toggle--btn" src="./assets/icon-hamburger.svg" alt="main menu">
         </button>
-        <ul class="main__nav__list modal__hide">
-          <li class="planet">
-            <a class="planet--btn mercury--btn" href="./index.html">Mercury</a>
+
+        <ul class="main__nav__list modal__hide" id="nav__menu" role="menu" aria-label="planets navigation menu">
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn mercury--btn" href="./index.html">Mercury</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn venus--btn" href="./venus.html">Venus</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn venus--btn" href="./venus.html">Venus</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn earth--btn" href="./earth.html">Earth</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn earth--btn" href="./earth.html">Earth</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn mars--btn" href="./mars.html">Mars</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn mars--btn" href="./mars.html">Mars</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn jupiter--btn" href="./jupiter.html">Jupiter</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn jupiter--btn" href="./jupiter.html">Jupiter</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn saturn--btn" href="./saturn.html">Saturn</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn saturn--btn" href="./saturn.html">Saturn</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn uranus--btn" href="./uranus.html">Uranus</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn uranus--btn" href="./uranus.html">Uranus</a>
           </li>
-          <li class="planet">
-            <a class="planet--btn neptune--btn" href="./neptune.html">Neptune</a>
+          <li role="none" class="planet">
+            <a role="menuitem" class="planet--btn neptune--btn" href="./neptune.html">Neptune</a>
           </li>
         </ul>
       </nav>
@@ -63,14 +64,14 @@
           <li class="tab__list__item">            
             <a class="tab__item--btn" href="#section2">
               <span class="tab__number">02</span>
-              Internal Structure
+              <span class="tab__item__hide">Internal</span> Structure
             </a>
           </li>
 
           <li class="tab__list__item">            
             <a class="tab__item--btn" href="#section3">
               <span class="tab__number">03</span>
-              Surface Geology
+              Surface <span  class="tab__item__hide">Geology</span>
             </a>
           </li>
         </ul>

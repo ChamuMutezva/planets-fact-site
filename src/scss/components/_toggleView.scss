@@ -76,7 +76,18 @@
     display: none;
 }
 
-
+.tab__item__hide {
+    position: relative;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+    display: inline-block;
+}
 
 @media screen and (min-width: 680px) {
 
@@ -131,9 +142,15 @@
         margin-top: 0.75rem;
     }
 
-    .tab__number {
+    .tab__number, .tab__item__hide  {
         display: inline;
+    }    
+
+
+}
+
+@media screen and (min-width: 1080px) {
+    .tab__item--btn {        
+        font-size: 0.75rem;
     }
-
-
 }
