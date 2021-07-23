@@ -710,7 +710,7 @@ h1, h2, h3, h4 {
   white-space: nowrap;
   /* added line */
   border: 0;
-  display: inline-block;
+  display: none;
 }
 
 @media screen and (min-width: 680px) {
